@@ -312,14 +312,14 @@ HAL_StatusTypeDef send_data_saving()
  */
 HAL_StatusTypeDef send_ack(UART_HandleTypeDef *huart)
 {
-	static uint8_t data[10];
+	static uint8_t data[BUS_PACKET_FRAME_SYNC_SIZE+BUS_PACKET_HEADER_SIZE+BUS_PACKET_ECF_SIZE];
 
 	HAL_StatusTypeDef err = bus_packet_EncodePacketize(BUS_PACKET_TYPE_TM, APID_BUS_ACK,
 			BUS_PACKET_ECF_EXIST, (uint8_t *)NULL, 0,
 			data+BUS_PACKET_DATA_SIZE);
 	if(err != HAL_OK) return err;
 	memcpy(data, BUS_PACKET_FRAME_SYNC, 4);
-	return HAL_UART_Transmit(huart, data, (bus_packet_GetLength(data+BUS_PACKET_DATA_SIZE) + BUS_PACKET_FRAME_SYNC_SIZE), 2);
+	return HAL_UART_Transmit(huart, data, (bus_packet_GetLength(data+BUS_PACKET_FRAME_SYNC_SIZE) + BUS_PACKET_FRAME_SYNC_SIZE), 2);
 }
 
 /**
@@ -329,14 +329,14 @@ HAL_StatusTypeDef send_ack(UART_HandleTypeDef *huart)
  */
 HAL_StatusTypeDef send_nack(UART_HandleTypeDef *huart)
 {
-	static uint8_t data[10];
+	static uint8_t data[BUS_PACKET_FRAME_SYNC_SIZE+BUS_PACKET_HEADER_SIZE+BUS_PACKET_ECF_SIZE];
 
 	 HAL_StatusTypeDef err = bus_packet_EncodePacketize(BUS_PACKET_TYPE_TM, APID_BUS_NACK,
 			BUS_PACKET_ECF_EXIST, (uint8_t *)NULL, 0,
 			data+BUS_PACKET_DATA_SIZE);
 	if(err != HAL_OK) return err;
 	memcpy(data, BUS_PACKET_FRAME_SYNC, 4);
-	return HAL_UART_Transmit(huart, data, (bus_packet_GetLength(data+BUS_PACKET_DATA_SIZE) + BUS_PACKET_FRAME_SYNC_SIZE), 2);
+	return HAL_UART_Transmit(huart, data, (bus_packet_GetLength(data+BUS_PACKET_FRAME_SYNC_SIZE) + BUS_PACKET_FRAME_SYNC_SIZE), 2);
 }
 
 
