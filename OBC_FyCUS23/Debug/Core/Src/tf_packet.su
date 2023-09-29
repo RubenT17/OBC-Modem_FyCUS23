@@ -1,0 +1,4 @@
+../Core/Src/tf_packet.c:58:19:tf_packet_Decode	32	static
+../Core/Src/tf_packet.c:126:19:tf_packet_Packetize	32	static
+../Core/Src/tf_packet.c:189:19:tf_packet_SetData	24	static
+../Core/Src/tf_packet.c:219:19:tf_packet_CRC16CCSDSConfig	8	static

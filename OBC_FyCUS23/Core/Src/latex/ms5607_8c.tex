@@ -1,0 +1,154 @@
+\hypertarget{ms5607_8c}{}\doxysection{ms5607.\+c File Reference}
+\label{ms5607_8c}\index{ms5607.c@{ms5607.c}}
+
+
+\+: M\+S5607 altimeter library.  
+
+
+{\ttfamily \#include \char`\"{}ms5607.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ms5607_8c_a4bebbd1e152fed2daba2bd806731d2a7}{ms5607\+\_\+reset}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ms5607_8c_a7b46e23273e1cf1afc3ea9201ec39bcd}{ms5607\+\_\+read\+Calibration}} (uint16\+\_\+t $\ast$cal)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ms5607_8c_a9d3c497e2a71db4edaf83351d8f64a7a}{ms5607\+\_\+get\+Temp}} (uint8\+\_\+t osr, uint16\+\_\+t $\ast$cal, float $\ast$temp)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ms5607_8c_aee96747fc9abe57844e3f7704e3c05b6}{ms5607\+\_\+get\+Temp\+Pressure}} (uint8\+\_\+t osr, uint16\+\_\+t $\ast$cal, float $\ast$temp, float $\ast$pressure)
+\item 
+float \mbox{\hyperlink{ms5607_8c_a6af707fa1bc406febc7e1dd361a6a48f}{ms5607\+\_\+get\+Altitude}} (float pressure)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: M\+S5607 altimeter library. 
+
+\begin{DoxyAuthor}{Author}
+Rubén Torres Bermúdez \href{mailto:rubentorresbermudez@gmail.com}{\texttt{ rubentorresbermudez@gmail.\+com}}
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Created on\+: 10.\+09.\+2023
+
+Description\+: This library is used to control a M\+S5607 altimeter.
+
+Copyright (C) 2021 Rubén Torres Bermúdez 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ms5607_8c_a6af707fa1bc406febc7e1dd361a6a48f}\label{ms5607_8c_a6af707fa1bc406febc7e1dd361a6a48f}} 
+\index{ms5607.c@{ms5607.c}!ms5607\_getAltitude@{ms5607\_getAltitude}}
+\index{ms5607\_getAltitude@{ms5607\_getAltitude}!ms5607.c@{ms5607.c}}
+\doxysubsubsection{\texorpdfstring{ms5607\_getAltitude()}{ms5607\_getAltitude()}}
+{\footnotesize\ttfamily float ms5607\+\_\+get\+Altitude (\begin{DoxyParamCaption}\item[{float}]{pressure }\end{DoxyParamCaption})}
+
+Convert pressure to altitude 
+\begin{DoxyParams}{Parameters}
+{\em pressure} & Pressure to conversion to altitude \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Altitude conversion 
+\end{DoxyReturn}
+
+
+Definition at line 182 of file ms5607.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+altimeter().
+
+\mbox{\Hypertarget{ms5607_8c_a9d3c497e2a71db4edaf83351d8f64a7a}\label{ms5607_8c_a9d3c497e2a71db4edaf83351d8f64a7a}} 
+\index{ms5607.c@{ms5607.c}!ms5607\_getTemp@{ms5607\_getTemp}}
+\index{ms5607\_getTemp@{ms5607\_getTemp}!ms5607.c@{ms5607.c}}
+\doxysubsubsection{\texorpdfstring{ms5607\_getTemp()}{ms5607\_getTemp()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def ms5607\+\_\+get\+Temp (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{osr,  }\item[{uint16\+\_\+t $\ast$}]{cal,  }\item[{float $\ast$}]{temp }\end{DoxyParamCaption})}
+
+Perform a conversion and read temperature 
+\begin{DoxyParams}{Parameters}
+{\em osr} & O\+SR set for A\+DC \\
+\hline
+{\em cal} & Calibration values \\
+\hline
+{\em temp} & Pointer to temperature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 117 of file ms5607.\+c.
+
+\mbox{\Hypertarget{ms5607_8c_aee96747fc9abe57844e3f7704e3c05b6}\label{ms5607_8c_aee96747fc9abe57844e3f7704e3c05b6}} 
+\index{ms5607.c@{ms5607.c}!ms5607\_getTempPressure@{ms5607\_getTempPressure}}
+\index{ms5607\_getTempPressure@{ms5607\_getTempPressure}!ms5607.c@{ms5607.c}}
+\doxysubsubsection{\texorpdfstring{ms5607\_getTempPressure()}{ms5607\_getTempPressure()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def ms5607\+\_\+get\+Temp\+Pressure (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{osr,  }\item[{uint16\+\_\+t $\ast$}]{cal,  }\item[{float $\ast$}]{temp,  }\item[{float $\ast$}]{pressure }\end{DoxyParamCaption})}
+
+Perform two conversions and read temperature and pressure 
+\begin{DoxyParams}{Parameters}
+{\em osr} & O\+SR set for A\+DC \\
+\hline
+{\em cal} & Calibration values \\
+\hline
+{\em temp} & Pointer to temperature \\
+\hline
+{\em pressure} & Pointer to pressure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file ms5607.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+altimeter().
+
+\mbox{\Hypertarget{ms5607_8c_a7b46e23273e1cf1afc3ea9201ec39bcd}\label{ms5607_8c_a7b46e23273e1cf1afc3ea9201ec39bcd}} 
+\index{ms5607.c@{ms5607.c}!ms5607\_readCalibration@{ms5607\_readCalibration}}
+\index{ms5607\_readCalibration@{ms5607\_readCalibration}!ms5607.c@{ms5607.c}}
+\doxysubsubsection{\texorpdfstring{ms5607\_readCalibration()}{ms5607\_readCalibration()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def ms5607\+\_\+read\+Calibration (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{cal }\end{DoxyParamCaption})}
+
+Read calibration values from P\+R\+OM 
+\begin{DoxyParams}{Parameters}
+{\em cal} & Pointer to calibration values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file ms5607.\+c.
+
+
+
+Referenced by aocs\+\_\+config\+\_\+altimeter().
+
+\mbox{\Hypertarget{ms5607_8c_a4bebbd1e152fed2daba2bd806731d2a7}\label{ms5607_8c_a4bebbd1e152fed2daba2bd806731d2a7}} 
+\index{ms5607.c@{ms5607.c}!ms5607\_reset@{ms5607\_reset}}
+\index{ms5607\_reset@{ms5607\_reset}!ms5607.c@{ms5607.c}}
+\doxysubsubsection{\texorpdfstring{ms5607\_reset()}{ms5607\_reset()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def ms5607\+\_\+reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Perform a device reset \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file ms5607.\+c.
+
+
+
+References hi2c1.
+
+
+
+Referenced by aocs\+\_\+config\+\_\+altimeter().
+

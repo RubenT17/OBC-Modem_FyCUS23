@@ -1,0 +1,474 @@
+\hypertarget{aocs_8c}{}\doxysection{aocs.\+c File Reference}
+\label{aocs_8c}\index{aocs.c@{aocs.c}}
+
+
+\+: A\+O\+CS for Fy\+C\+US 2023.  
+
+
+{\ttfamily \#include \char`\"{}aocs.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{aocs_8c_aa21928e148539b0a165a263c5de665b9}{aocs\+\_\+config\+\_\+gnss}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{aocs_8c_afd703945b4fe1fa87b178a0391f90f2b}{aocs\+\_\+config\+\_\+magnetometer}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{aocs_8c_a24df1a3f9c183cf6fd4db1e1d6420afa}{aocs\+\_\+config\+\_\+imu}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{aocs_8c_ab972c625464a4e02174805db6642c76f}{aocs\+\_\+config\+\_\+altimeter}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{aocs_8c_a964ea2819314fae42461863a9bf11a09}{aocs\+\_\+config\+\_\+temp}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{aocs_8c_add175928e17c65c02001af43b140fa4e}{aocs\+\_\+get\+\_\+gnss}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{aocs_8c_aaf6e1384a59f703e3683b32544dc39b5}{aocs\+\_\+get\+\_\+mag}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{aocs_8c_aa11563de6fd3ffb16e94d21110297abe}{aocs\+\_\+get\+\_\+imu}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{aocs_8c_a9cf3ef77bb0c292bd3a7f872cf5a2a15}{aocs\+\_\+get\+\_\+accel}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{aocs_8c_a69dbd9394c8d083769fddfc710d06a53}{aocs\+\_\+get\+\_\+gyro}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{aocs_8c_a9860b97c1fc9193fd56db3e0af556ae0}{aocs\+\_\+get\+\_\+altimeter}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{aocs_8c_a881523ee811be1f7edfd301a5976666c}{aocs\+\_\+get\+\_\+temp}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{aocs_8c_addc3068805ac7acecee4ce0b1f5e1457}{aocs\+\_\+get\+\_\+pubx}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+imu\+\_\+t \mbox{\hyperlink{aocs_8c_a16b6f6c7ef9a694549b8a7194915a85a}{imu}} = \{0\}
+\item 
+magneto\+\_\+t \mbox{\hyperlink{aocs_8c_affcdc92b917a11e44c860ee0d499bf95}{mag}} = \{0\}
+\item 
+altimeter\+\_\+t \mbox{\hyperlink{aocs_8c_ad5331f891bdbafb6662df4ef752e6261}{altimeter}} = \{0\}
+\item 
+temperatures\+\_\+t \mbox{\hyperlink{aocs_8c_a18a26127fa1f5ef0745275f1f4494fa3}{temps}} = \{0\}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{aocs_8c_a96606ef7003222e9617d21109fc960b9}{gnss\+\_\+ring}} \mbox{[}G\+N\+S\+S\+\_\+\+R\+I\+N\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE\mbox{]} = \{0\}
+\item 
+volatile uint32\+\_\+t \mbox{\hyperlink{aocs_8c_afdcfaf5d0cd4b5751dca8be480a14bef}{gnss\+\_\+ring\+\_\+pos}} = 0
+\item 
+volatile uint32\+\_\+t \mbox{\hyperlink{aocs_8c_a315fe20a46136a9c9418672e3d1dea57}{gnss\+\_\+ring\+\_\+last\+\_\+end}} = 0
+\item 
+volatile uint32\+\_\+t \mbox{\hyperlink{aocs_8c_a3a5fe3d7020c5bc0b0c0246f675b78ed}{gnss\+\_\+ring\+\_\+last\+\_\+ini}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{aocs_8c_a9ff7dc47bb953851db1931baaaf0f100}{pubx\+\_\+ring}} \mbox{[}200\mbox{]} = \{0\}
+\item 
+gnss\+\_\+nmea\+\_\+rmc\+\_\+sentence\+\_\+t \mbox{\hyperlink{aocs_8c_aa460eb7da19a47bb4e1c699734a803fa}{rmc}}
+\item 
+gnss\+\_\+nmea\+\_\+gga\+\_\+sentence\+\_\+t \mbox{\hyperlink{aocs_8c_a719550e8868ff3e423aaa88a67c06979}{gga}}
+\item 
+gnss\+\_\+nmea\+\_\+t \mbox{\hyperlink{aocs_8c_a6b6e580ae2624f1e62d3baf87eeca1bc}{gnss}} = \{\&\mbox{\hyperlink{aocs_8c_aa460eb7da19a47bb4e1c699734a803fa}{rmc}}, \&\mbox{\hyperlink{aocs_8c_a719550e8868ff3e423aaa88a67c06979}{gga}}\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: A\+O\+CS for Fy\+C\+US 2023. 
+
+\begin{DoxyAuthor}{Author}
+Rubén Torres Bermúdez \href{mailto:rubentorresbermudez@gmail.com}{\texttt{ rubentorresbermudez@gmail.\+com}}
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Created on\+: 05.\+09.\+2023
+
+Description\+: This library is used to control the A\+O\+CS subsystem in Fy\+C\+US 2023 project
+
+Copyright (C) 2023 Rubén Torres Bermúdez 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{aocs_8c_ab972c625464a4e02174805db6642c76f}\label{aocs_8c_ab972c625464a4e02174805db6642c76f}} 
+\index{aocs.c@{aocs.c}!aocs\_config\_altimeter@{aocs\_config\_altimeter}}
+\index{aocs\_config\_altimeter@{aocs\_config\_altimeter}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{aocs\_config\_altimeter()}{aocs\_config\_altimeter()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def aocs\+\_\+config\+\_\+altimeter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Configure M\+S5607 altimeter \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 146 of file aocs.\+c.
+
+
+
+References altimeter, ms5607\+\_\+read\+Calibration(), and ms5607\+\_\+reset().
+
+
+
+Referenced by check\+\_\+status().
+
+\mbox{\Hypertarget{aocs_8c_aa21928e148539b0a165a263c5de665b9}\label{aocs_8c_aa21928e148539b0a165a263c5de665b9}} 
+\index{aocs.c@{aocs.c}!aocs\_config\_gnss@{aocs\_config\_gnss}}
+\index{aocs\_config\_gnss@{aocs\_config\_gnss}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{aocs\_config\_gnss()}{aocs\_config\_gnss()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def aocs\+\_\+config\+\_\+gnss (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Configure N\+EO G\+N\+SS receiver \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file aocs.\+c.
+
+\mbox{\Hypertarget{aocs_8c_a24df1a3f9c183cf6fd4db1e1d6420afa}\label{aocs_8c_a24df1a3f9c183cf6fd4db1e1d6420afa}} 
+\index{aocs.c@{aocs.c}!aocs\_config\_imu@{aocs\_config\_imu}}
+\index{aocs\_config\_imu@{aocs\_config\_imu}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{aocs\_config\_imu()}{aocs\_config\_imu()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def aocs\+\_\+config\+\_\+imu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Configure L\+S\+M6\+D\+SO I\+MU \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 130 of file aocs.\+c.
+
+
+
+References hi2c1, lsm6dso\+\_\+config(), and lsm6dso\+\_\+who\+Iam().
+
+
+
+Referenced by check\+\_\+status().
+
+\mbox{\Hypertarget{aocs_8c_afd703945b4fe1fa87b178a0391f90f2b}\label{aocs_8c_afd703945b4fe1fa87b178a0391f90f2b}} 
+\index{aocs.c@{aocs.c}!aocs\_config\_magnetometer@{aocs\_config\_magnetometer}}
+\index{aocs\_config\_magnetometer@{aocs\_config\_magnetometer}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{aocs\_config\_magnetometer()}{aocs\_config\_magnetometer()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def aocs\+\_\+config\+\_\+magnetometer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Configure L\+I\+S2\+M\+DL magnetometer \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file aocs.\+c.
+
+
+
+References hi2c1, lis2mdl\+\_\+config(), and lis2mdl\+\_\+who\+Iam().
+
+
+
+Referenced by check\+\_\+status().
+
+\mbox{\Hypertarget{aocs_8c_a964ea2819314fae42461863a9bf11a09}\label{aocs_8c_a964ea2819314fae42461863a9bf11a09}} 
+\index{aocs.c@{aocs.c}!aocs\_config\_temp@{aocs\_config\_temp}}
+\index{aocs\_config\_temp@{aocs\_config\_temp}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{aocs\_config\_temp()}{aocs\_config\_temp()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def aocs\+\_\+config\+\_\+temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Configure D\+S18\+B20 temperature sensors \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 163 of file aocs.\+c.
+
+
+
+References D\+S18\+B20\+\_\+\+Reset\+\_\+\+C\+M\+D(), D\+S18\+B20\+\_\+\+Set\+Resolution(), and temps.
+
+
+
+Referenced by check\+\_\+status().
+
+\mbox{\Hypertarget{aocs_8c_a9cf3ef77bb0c292bd3a7f872cf5a2a15}\label{aocs_8c_a9cf3ef77bb0c292bd3a7f872cf5a2a15}} 
+\index{aocs.c@{aocs.c}!aocs\_get\_accel@{aocs\_get\_accel}}
+\index{aocs\_get\_accel@{aocs\_get\_accel}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{aocs\_get\_accel()}{aocs\_get\_accel()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def aocs\+\_\+get\+\_\+accel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get linear acceleration from L\+S\+M6\+D\+SO \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 253 of file aocs.\+c.
+
+
+
+References hi2c1, imu, lsm6dso\+\_\+read\+Accel(), and lsm6dso\+\_\+read\+Status().
+
+\mbox{\Hypertarget{aocs_8c_a9860b97c1fc9193fd56db3e0af556ae0}\label{aocs_8c_a9860b97c1fc9193fd56db3e0af556ae0}} 
+\index{aocs.c@{aocs.c}!aocs\_get\_altimeter@{aocs\_get\_altimeter}}
+\index{aocs\_get\_altimeter@{aocs\_get\_altimeter}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{aocs\_get\_altimeter()}{aocs\_get\_altimeter()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def aocs\+\_\+get\+\_\+altimeter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get altitude, pressure and temperature from M\+S5607 \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 286 of file aocs.\+c.
+
+
+
+References altimeter, ms5607\+\_\+get\+Altitude(), and ms5607\+\_\+get\+Temp\+Pressure().
+
+\mbox{\Hypertarget{aocs_8c_add175928e17c65c02001af43b140fa4e}\label{aocs_8c_add175928e17c65c02001af43b140fa4e}} 
+\index{aocs.c@{aocs.c}!aocs\_get\_gnss@{aocs\_get\_gnss}}
+\index{aocs\_get\_gnss@{aocs\_get\_gnss}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{aocs\_get\_gnss()}{aocs\_get\_gnss()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def aocs\+\_\+get\+\_\+gnss (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Decode N\+M\+EA message into from ring buffer data \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 198 of file aocs.\+c.
+
+
+
+References gnss, gnss\+\_\+nmea\+\_\+\+Get\+Data(), gnss\+\_\+ring, gnss\+\_\+ring\+\_\+last\+\_\+end, and gnss\+\_\+ring\+\_\+last\+\_\+ini.
+
+\mbox{\Hypertarget{aocs_8c_a69dbd9394c8d083769fddfc710d06a53}\label{aocs_8c_a69dbd9394c8d083769fddfc710d06a53}} 
+\index{aocs.c@{aocs.c}!aocs\_get\_gyro@{aocs\_get\_gyro}}
+\index{aocs\_get\_gyro@{aocs\_get\_gyro}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{aocs\_get\_gyro()}{aocs\_get\_gyro()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def aocs\+\_\+get\+\_\+gyro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get angular acceleration from L\+S\+M6\+D\+SO \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 270 of file aocs.\+c.
+
+
+
+References hi2c1, imu, lsm6dso\+\_\+read\+Gyro(), and lsm6dso\+\_\+read\+Status().
+
+\mbox{\Hypertarget{aocs_8c_aa11563de6fd3ffb16e94d21110297abe}\label{aocs_8c_aa11563de6fd3ffb16e94d21110297abe}} 
+\index{aocs.c@{aocs.c}!aocs\_get\_imu@{aocs\_get\_imu}}
+\index{aocs\_get\_imu@{aocs\_get\_imu}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{aocs\_get\_imu()}{aocs\_get\_imu()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def aocs\+\_\+get\+\_\+imu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get angular and linear acceleration from L\+S\+M6\+D\+SO \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 227 of file aocs.\+c.
+
+
+
+References hi2c1, imu, lsm6dso\+\_\+read\+Accel(), lsm6dso\+\_\+read\+Gyro(), lsm6dso\+\_\+read\+Status(), and lsm6dso\+\_\+read\+Temp().
+
+\mbox{\Hypertarget{aocs_8c_aaf6e1384a59f703e3683b32544dc39b5}\label{aocs_8c_aaf6e1384a59f703e3683b32544dc39b5}} 
+\index{aocs.c@{aocs.c}!aocs\_get\_mag@{aocs\_get\_mag}}
+\index{aocs\_get\_mag@{aocs\_get\_mag}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{aocs\_get\_mag()}{aocs\_get\_mag()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def aocs\+\_\+get\+\_\+mag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get megnetometer values from L\+I\+S2\+M\+DL \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 208 of file aocs.\+c.
+
+
+
+References hi2c1, lis2mdl\+\_\+read\+Mag(), lis2mdl\+\_\+read\+Temp(), lis2mdl\+\_\+status(), and mag.
+
+\mbox{\Hypertarget{aocs_8c_addc3068805ac7acecee4ce0b1f5e1457}\label{aocs_8c_addc3068805ac7acecee4ce0b1f5e1457}} 
+\index{aocs.c@{aocs.c}!aocs\_get\_pubx@{aocs\_get\_pubx}}
+\index{aocs\_get\_pubx@{aocs\_get\_pubx}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{aocs\_get\_pubx()}{aocs\_get\_pubx()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def aocs\+\_\+get\+\_\+pubx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get P\+U\+BX message from N\+EO G\+N\+SS receiver \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 321 of file aocs.\+c.
+
+
+
+References pubx\+\_\+ring.
+
+\mbox{\Hypertarget{aocs_8c_a881523ee811be1f7edfd301a5976666c}\label{aocs_8c_a881523ee811be1f7edfd301a5976666c}} 
+\index{aocs.c@{aocs.c}!aocs\_get\_temp@{aocs\_get\_temp}}
+\index{aocs\_get\_temp@{aocs\_get\_temp}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{aocs\_get\_temp()}{aocs\_get\_temp()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def aocs\+\_\+get\+\_\+temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get temperature from D\+S18\+B20 \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 298 of file aocs.\+c.
+
+
+
+References D\+S18\+B20\+\_\+\+All\+\_\+\+Convert(), D\+S18\+B20\+\_\+\+Read\+\_\+\+Temp(), D\+S18\+B20\+\_\+\+Reset\+\_\+\+C\+M\+D(), and temps.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{aocs_8c_ad5331f891bdbafb6662df4ef752e6261}\label{aocs_8c_ad5331f891bdbafb6662df4ef752e6261}} 
+\index{aocs.c@{aocs.c}!altimeter@{altimeter}}
+\index{altimeter@{altimeter}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{altimeter}{altimeter}}
+{\footnotesize\ttfamily altimeter\+\_\+t altimeter = \{0\}}
+
+
+
+Definition at line 32 of file aocs.\+c.
+
+
+
+Referenced by aocs\+\_\+config\+\_\+altimeter(), and aocs\+\_\+get\+\_\+altimeter().
+
+\mbox{\Hypertarget{aocs_8c_a719550e8868ff3e423aaa88a67c06979}\label{aocs_8c_a719550e8868ff3e423aaa88a67c06979}} 
+\index{aocs.c@{aocs.c}!gga@{gga}}
+\index{gga@{gga}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{gga}{gga}}
+{\footnotesize\ttfamily gnss\+\_\+nmea\+\_\+gga\+\_\+sentence\+\_\+t gga}
+
+
+
+Definition at line 44 of file aocs.\+c.
+
+\mbox{\Hypertarget{aocs_8c_a6b6e580ae2624f1e62d3baf87eeca1bc}\label{aocs_8c_a6b6e580ae2624f1e62d3baf87eeca1bc}} 
+\index{aocs.c@{aocs.c}!gnss@{gnss}}
+\index{gnss@{gnss}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{gnss}{gnss}}
+{\footnotesize\ttfamily gnss\+\_\+nmea\+\_\+t gnss = \{\&\mbox{\hyperlink{aocs_8c_aa460eb7da19a47bb4e1c699734a803fa}{rmc}}, \&\mbox{\hyperlink{aocs_8c_a719550e8868ff3e423aaa88a67c06979}{gga}}\}}
+
+
+
+Definition at line 45 of file aocs.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+gnss().
+
+\mbox{\Hypertarget{aocs_8c_a96606ef7003222e9617d21109fc960b9}\label{aocs_8c_a96606ef7003222e9617d21109fc960b9}} 
+\index{aocs.c@{aocs.c}!gnss\_ring@{gnss\_ring}}
+\index{gnss\_ring@{gnss\_ring}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{gnss\_ring}{gnss\_ring}}
+{\footnotesize\ttfamily uint8\+\_\+t gnss\+\_\+ring\mbox{[}G\+N\+S\+S\+\_\+\+R\+I\+N\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE\mbox{]} = \{0\}}
+
+
+
+Definition at line 38 of file aocs.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+gnss().
+
+\mbox{\Hypertarget{aocs_8c_a315fe20a46136a9c9418672e3d1dea57}\label{aocs_8c_a315fe20a46136a9c9418672e3d1dea57}} 
+\index{aocs.c@{aocs.c}!gnss\_ring\_last\_end@{gnss\_ring\_last\_end}}
+\index{gnss\_ring\_last\_end@{gnss\_ring\_last\_end}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{gnss\_ring\_last\_end}{gnss\_ring\_last\_end}}
+{\footnotesize\ttfamily volatile uint32\+\_\+t gnss\+\_\+ring\+\_\+last\+\_\+end = 0}
+
+
+
+Definition at line 40 of file aocs.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+gnss().
+
+\mbox{\Hypertarget{aocs_8c_a3a5fe3d7020c5bc0b0c0246f675b78ed}\label{aocs_8c_a3a5fe3d7020c5bc0b0c0246f675b78ed}} 
+\index{aocs.c@{aocs.c}!gnss\_ring\_last\_ini@{gnss\_ring\_last\_ini}}
+\index{gnss\_ring\_last\_ini@{gnss\_ring\_last\_ini}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{gnss\_ring\_last\_ini}{gnss\_ring\_last\_ini}}
+{\footnotesize\ttfamily volatile uint32\+\_\+t gnss\+\_\+ring\+\_\+last\+\_\+ini = 0}
+
+
+
+Definition at line 41 of file aocs.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+gnss().
+
+\mbox{\Hypertarget{aocs_8c_afdcfaf5d0cd4b5751dca8be480a14bef}\label{aocs_8c_afdcfaf5d0cd4b5751dca8be480a14bef}} 
+\index{aocs.c@{aocs.c}!gnss\_ring\_pos@{gnss\_ring\_pos}}
+\index{gnss\_ring\_pos@{gnss\_ring\_pos}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{gnss\_ring\_pos}{gnss\_ring\_pos}}
+{\footnotesize\ttfamily volatile uint32\+\_\+t gnss\+\_\+ring\+\_\+pos = 0}
+
+
+
+Definition at line 39 of file aocs.\+c.
+
+\mbox{\Hypertarget{aocs_8c_a16b6f6c7ef9a694549b8a7194915a85a}\label{aocs_8c_a16b6f6c7ef9a694549b8a7194915a85a}} 
+\index{aocs.c@{aocs.c}!imu@{imu}}
+\index{imu@{imu}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{imu}{imu}}
+{\footnotesize\ttfamily imu\+\_\+t imu = \{0\}}
+
+
+
+Definition at line 26 of file aocs.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+accel(), aocs\+\_\+get\+\_\+gyro(), and aocs\+\_\+get\+\_\+imu().
+
+\mbox{\Hypertarget{aocs_8c_affcdc92b917a11e44c860ee0d499bf95}\label{aocs_8c_affcdc92b917a11e44c860ee0d499bf95}} 
+\index{aocs.c@{aocs.c}!mag@{mag}}
+\index{mag@{mag}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{mag}{mag}}
+{\footnotesize\ttfamily magneto\+\_\+t mag = \{0\}}
+
+
+
+Definition at line 29 of file aocs.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+mag().
+
+\mbox{\Hypertarget{aocs_8c_a9ff7dc47bb953851db1931baaaf0f100}\label{aocs_8c_a9ff7dc47bb953851db1931baaaf0f100}} 
+\index{aocs.c@{aocs.c}!pubx\_ring@{pubx\_ring}}
+\index{pubx\_ring@{pubx\_ring}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{pubx\_ring}{pubx\_ring}}
+{\footnotesize\ttfamily uint8\+\_\+t pubx\+\_\+ring\mbox{[}200\mbox{]} = \{0\}}
+
+
+
+Definition at line 42 of file aocs.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+pubx().
+
+\mbox{\Hypertarget{aocs_8c_aa460eb7da19a47bb4e1c699734a803fa}\label{aocs_8c_aa460eb7da19a47bb4e1c699734a803fa}} 
+\index{aocs.c@{aocs.c}!rmc@{rmc}}
+\index{rmc@{rmc}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{rmc}{rmc}}
+{\footnotesize\ttfamily gnss\+\_\+nmea\+\_\+rmc\+\_\+sentence\+\_\+t rmc}
+
+
+
+Definition at line 43 of file aocs.\+c.
+
+\mbox{\Hypertarget{aocs_8c_a18a26127fa1f5ef0745275f1f4494fa3}\label{aocs_8c_a18a26127fa1f5ef0745275f1f4494fa3}} 
+\index{aocs.c@{aocs.c}!temps@{temps}}
+\index{temps@{temps}!aocs.c@{aocs.c}}
+\doxysubsubsection{\texorpdfstring{temps}{temps}}
+{\footnotesize\ttfamily temperatures\+\_\+t temps = \{0\}}
+
+
+
+Definition at line 35 of file aocs.\+c.
+
+
+
+Referenced by aocs\+\_\+config\+\_\+temp(), and aocs\+\_\+get\+\_\+temp().
+

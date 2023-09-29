@@ -1,0 +1,8 @@
+../Core/Src/lsm6dso.c:32:19:lsm6dso_config	15
+../Core/Src/lsm6dso.c:144:19:lsm6dso_readAccel	2
+../Core/Src/lsm6dso.c:171:19:lsm6dso_readGyro	2
+../Core/Src/lsm6dso.c:196:19:lsm6dso_readTemp	2
+../Core/Src/lsm6dso.c:216:9:lsm6dso_readStatus	2
+../Core/Src/lsm6dso.c:232:9:lsm6dso_whoIam	1
+../Core/Src/lsm6dso.c:246:19:lsm6dso_resetSoftware	3
+../Core/Src/lsm6dso.c:267:19:lsm6dso_resetMemory	2

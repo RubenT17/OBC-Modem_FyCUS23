@@ -1,0 +1,729 @@
+\hypertarget{_r_t__ds18b20_8c}{}\doxysection{R\+T\+\_\+ds18b20.\+c File Reference}
+\label{_r_t__ds18b20_8c}\index{RT\_ds18b20.c@{RT\_ds18b20.c}}
+
+
+\+: D\+S18\+B20 digital thermometer library for S\+T\+M32 H\+AL.  
+
+
+{\ttfamily \#include $<$R\+T\+\_\+ds18b20.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{_r_t__ds18b20_8c_a7d4d0e9e43cecfc110261735c233d9eb}{delay\+Micro}} (uint32\+\_\+t delay)
+\item 
+void \mbox{\hyperlink{_r_t__ds18b20_8c_ad4fe2b3520bfe1fc588a806e6224633e}{\+\_\+write\+\_\+\+Bit}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, G\+P\+I\+O\+\_\+\+Pin\+State bit\+\_\+tx)
+\begin{DoxyCompactList}\small\item\em Write a bit with onewire communication. \end{DoxyCompactList}\item 
+\+\_\+\+Bool \mbox{\hyperlink{_r_t__ds18b20_8c_aa03ce6e5e5d796e3ff244585d1ef6685}{\+\_\+read\+\_\+\+Bit}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Read a bit with onewire communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t__ds18b20_8c_aa57e05c3515d2655ca79e48fe5670ce1}{\+\_\+write\+\_\+\+Byte}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint8\+\_\+t data\+\_\+tx)
+\begin{DoxyCompactList}\small\item\em Write a byte with onewire communication. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_r_t__ds18b20_8c_ac887683c2a3d0c858cae503a1ec04e4f}{\+\_\+read\+\_\+\+Byte}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Read a byte with onewire communication. \end{DoxyCompactList}\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{_r_t__ds18b20_8c_a86040784bb45a6ee55b4431e31d541df}{D\+S18\+B20\+\_\+\+Reset\+\_\+\+C\+MD}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Send a command to initializes the onewire communication and the connected device(s). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t__ds18b20_8c_ab7629ff8cfd5ba6f7c56177f01c8741b}{D\+S18\+B20\+\_\+\+Read\+R\+O\+M\+\_\+\+C\+MD}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint8\+\_\+t $\ast$dirb)
+\item 
+void \mbox{\hyperlink{_r_t__ds18b20_8c_adb25f3c91be17d50239e9a02c26d6d07}{D\+S18\+B20\+\_\+\+Match\+R\+O\+M\+\_\+\+C\+MD}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint8\+\_\+t $\ast$dirb)
+\begin{DoxyCompactList}\small\item\em Send a command to select a onewire device. \end{DoxyCompactList}\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{_r_t__ds18b20_8c_a6d18306f759b223cc0ac0f7935833bf3}{D\+S18\+B20\+\_\+\+Convert\+T\+\_\+\+C\+MD}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Send a command to convert A/D the temperature of the selected onewire device. \end{DoxyCompactList}\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{_r_t__ds18b20_8c_a303d5d3fabaecd69266003e9340eac10}{D\+S18\+B20\+\_\+\+Read\+Scratchpad\+\_\+\+C\+MD}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint8\+\_\+t $\ast$data, uint8\+\_\+t n\+\_\+bytes)
+\begin{DoxyCompactList}\small\item\em Send a command to read bytes of the scratchpad. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t__ds18b20_8c_a74ad4789fcd5977fea78f6bcdb6807bd}{D\+S18\+B20\+\_\+\+Write\+Scratchpad\+\_\+\+C\+MD}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint8\+\_\+t th\+\_\+reg, uint8\+\_\+t tl\+\_\+reg, ds18b20\+\_\+resolution\+\_\+t resol)
+\begin{DoxyCompactList}\small\item\em Send a command to write in scratchpad of the selected onewire device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t__ds18b20_8c_afb3b333f2a3ad7708238dc13bcfe06d4}{D\+S18\+B20\+\_\+\+Search\+R\+O\+M\+\_\+\+C\+MD}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint8\+\_\+t $\ast$dirb)
+\begin{DoxyCompactList}\small\item\em Send a command to search all R\+OM codes of onewire bus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t__ds18b20_8c_a3123cd7e2d5fa1341d877b7fb0754ad8}{D\+S18\+B20\+\_\+\+Skip\+R\+O\+M\+\_\+\+C\+MD}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Send a command to select all onewire device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t__ds18b20_8c_aaa8c291e61d0373b33666d569082e231}{D\+S18\+B20\+\_\+\+Copy\+Scratchpad\+\_\+\+C\+MD}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Send a command to copy TH, TL and configuration register to E\+E\+P\+R\+OM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_r_t__ds18b20_8c_a319646ec3d8e9570154eb1d5493f144b}{D\+S18\+B20\+\_\+\+Recall\+E2\+\_\+\+C\+MD}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Send a command to restore TH, TL and configuration register from E\+E\+P\+R\+OM. \end{DoxyCompactList}\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{_r_t__ds18b20_8c_a393b26483ba999474c1cb4a63293c241}{D\+S18\+B20\+\_\+\+Set\+Resolution}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint8\+\_\+t $\ast$dirb, ds18b20\+\_\+resolution\+\_\+t resol)
+\begin{DoxyCompactList}\small\item\em Shortcut to read the temperature of a onewire device. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_r_t__ds18b20_8c_a2fbd659fb5f0286486689ff8cddb10fb}{D\+S18\+B20\+\_\+\+Decode\+\_\+\+Temperature}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read the scratchpad of the selected onewire device and decode the data temperature. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_r_t__ds18b20_8c_a701cdf91bb36ea6702bc305ce160a5d3}{D\+S18\+B20\+\_\+\+Convert\+Read\+\_\+\+Temp}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint8\+\_\+t $\ast$dirb)
+\begin{DoxyCompactList}\small\item\em Shortcut to do the conversion and read of the temperature in a onewire device. \end{DoxyCompactList}\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{_r_t__ds18b20_8c_ae19cd85046ad0b7d2b36cf9a069f6ca7}{D\+S18\+B20\+\_\+\+All\+\_\+\+Convert}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Shortcut to do the A/D conversion on all onewire device(s). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_r_t__ds18b20_8c_acae2c214541c6f1bd6b5909e9196c028}{D\+S18\+B20\+\_\+\+Read\+\_\+\+Temp}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint8\+\_\+t $\ast$dirb)
+\begin{DoxyCompactList}\small\item\em Shortcut to read the temperature of a onewire device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: D\+S18\+B20 digital thermometer library for S\+T\+M32 H\+AL. 
+
+\begin{DoxyAuthor}{Author}
+Rubén Torres Bermúdez \href{mailto:rubentorresbermudez@gmail.com}{\texttt{ rubentorresbermudez@gmail.\+com}}
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Created on\+: 13.\+09.\+2021
+
+Description\+: This library is used to control one or more D\+S18\+B20 digital thermometers with S\+T\+M32 H\+AL.
+
+Basic example\+: D\+S18\+B20\+\_\+\+Reset\+\_\+\+C\+M\+D(\+D\+S\+\_\+\+G\+P\+I\+O\+\_\+\+Port, D\+S\+\_\+\+Pin); D\+S18\+B20\+\_\+\+Read\+R\+O\+M\+\_\+\+C\+M\+D(\+D\+S\+\_\+\+G\+P\+I\+O\+\_\+\+Port, D\+S\+\_\+\+Pin, dirb); D\+S18\+B20\+\_\+\+Reset\+\_\+\+C\+M\+D(\+D\+S\+\_\+\+G\+P\+I\+O\+\_\+\+Port, D\+S\+\_\+\+Pin); D\+S18\+B20\+\_\+\+Set\+Resolution(\+D\+S\+\_\+\+G\+P\+I\+O\+\_\+\+Port, D\+S\+\_\+\+Pin, dirb, D\+S18\+B20\+\_\+\+R\+E\+S\+O\+L\+U\+T\+I\+O\+N\+\_\+10); D\+S18\+B20\+\_\+\+All\+\_\+\+Convert(\+D\+S\+\_\+\+G\+P\+I\+O\+\_\+\+Port, D\+S\+\_\+\+Pin); temp = D\+S18\+B20\+\_\+\+Read\+\_\+\+Temp(\+D\+S\+\_\+\+G\+P\+I\+O\+\_\+\+Port, D\+S\+\_\+\+Pin, dirb);
+
+Warning\+: Before sending each command (ending in \+\_\+\+C\+M\+D()), use the \mbox{\hyperlink{_r_t__ds18b20_8c_a86040784bb45a6ee55b4431e31d541df}{D\+S18\+B20\+\_\+\+Reset\+\_\+\+C\+M\+D()}} function. The G\+P\+IO used must be O\+U\+T\+P\+UT O\+P\+EN D\+R\+A\+IN and H\+I\+GH output speed. Configure the delay\+Micros() function in your \mbox{\hyperlink{main_8c}{main.\+c}} or in \mbox{\hyperlink{_r_t__ds18b20_8c}{R\+T\+\_\+ds18b20.\+c}}
+
+Copyright (C) 2021 Rubén Torres Bermúdez 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_r_t__ds18b20_8c_aa03ce6e5e5d796e3ff244585d1ef6685}\label{_r_t__ds18b20_8c_aa03ce6e5e5d796e3ff244585d1ef6685}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!\_read\_Bit@{\_read\_Bit}}
+\index{\_read\_Bit@{\_read\_Bit}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{\_read\_Bit()}{\_read\_Bit()}}
+{\footnotesize\ttfamily \+\_\+\+Bool \+\_\+read\+\_\+\+Bit (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Read a bit with onewire communication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & bit read. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 75 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References delay\+Micro().
+
+
+
+Referenced by \+\_\+read\+\_\+\+Byte().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_ac887683c2a3d0c858cae503a1ec04e4f}\label{_r_t__ds18b20_8c_ac887683c2a3d0c858cae503a1ec04e4f}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!\_read\_Byte@{\_read\_Byte}}
+\index{\_read\_Byte@{\_read\_Byte}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{\_read\_Byte()}{\_read\_Byte()}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+read\+\_\+\+Byte (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Read a byte with onewire communication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & byte read. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 119 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References \+\_\+read\+\_\+\+Bit().
+
+
+
+Referenced by D\+S18\+B20\+\_\+\+Read\+R\+O\+M\+\_\+\+C\+M\+D(), and D\+S18\+B20\+\_\+\+Read\+Scratchpad\+\_\+\+C\+M\+D().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_ad4fe2b3520bfe1fc588a806e6224633e}\label{_r_t__ds18b20_8c_ad4fe2b3520bfe1fc588a806e6224633e}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!\_write\_Bit@{\_write\_Bit}}
+\index{\_write\_Bit@{\_write\_Bit}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{\_write\_Bit()}{\_write\_Bit()}}
+{\footnotesize\ttfamily void \+\_\+write\+\_\+\+Bit (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{G\+P\+I\+O\+\_\+\+Pin\+State}]{bit\+\_\+tx }\end{DoxyParamCaption})}
+
+
+
+Write a bit with onewire communication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+{\em bit\+\_\+tx} & specifies the value to be written. This parameter can be one of the G\+P\+I\+O\+\_\+\+Pin\+State enum values\+: \begin{DoxyItemize}
+\item G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+\+R\+E\+S\+ET\+: to write 0. \item G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+\+S\+ET\+: to write 1. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 57 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References delay\+Micro().
+
+
+
+Referenced by \+\_\+write\+\_\+\+Byte().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_aa57e05c3515d2655ca79e48fe5670ce1}\label{_r_t__ds18b20_8c_aa57e05c3515d2655ca79e48fe5670ce1}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!\_write\_Byte@{\_write\_Byte}}
+\index{\_write\_Byte@{\_write\_Byte}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{\_write\_Byte()}{\_write\_Byte()}}
+{\footnotesize\ttfamily void \+\_\+write\+\_\+\+Byte (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{uint8\+\_\+t}]{data\+\_\+tx }\end{DoxyParamCaption})}
+
+
+
+Write a byte with onewire communication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+{\em data\+\_\+tx} & specifies the byte to be written. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 97 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References \+\_\+write\+\_\+\+Bit(), and delay\+Micro().
+
+
+
+Referenced by D\+S18\+B20\+\_\+\+Convert\+T\+\_\+\+C\+M\+D(), D\+S18\+B20\+\_\+\+Copy\+Scratchpad\+\_\+\+C\+M\+D(), D\+S18\+B20\+\_\+\+Match\+R\+O\+M\+\_\+\+C\+M\+D(), D\+S18\+B20\+\_\+\+Read\+R\+O\+M\+\_\+\+C\+M\+D(), D\+S18\+B20\+\_\+\+Read\+Scratchpad\+\_\+\+C\+M\+D(), D\+S18\+B20\+\_\+\+Recall\+E2\+\_\+\+C\+M\+D(), D\+S18\+B20\+\_\+\+Skip\+R\+O\+M\+\_\+\+C\+M\+D(), and D\+S18\+B20\+\_\+\+Write\+Scratchpad\+\_\+\+C\+M\+D().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_a7d4d0e9e43cecfc110261735c233d9eb}\label{_r_t__ds18b20_8c_a7d4d0e9e43cecfc110261735c233d9eb}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!delayMicro@{delayMicro}}
+\index{delayMicro@{delayMicro}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{delayMicro()}{delayMicro()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+weak void delay\+Micro (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{delay }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+Referenced by \+\_\+read\+\_\+\+Bit(), \+\_\+write\+\_\+\+Bit(), \+\_\+write\+\_\+\+Byte(), D\+S18\+B20\+\_\+\+Convert\+T\+\_\+\+C\+M\+D(), and D\+S18\+B20\+\_\+\+Reset\+\_\+\+C\+M\+D().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_ae19cd85046ad0b7d2b36cf9a069f6ca7}\label{_r_t__ds18b20_8c_ae19cd85046ad0b7d2b36cf9a069f6ca7}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_All\_Convert@{DS18B20\_All\_Convert}}
+\index{DS18B20\_All\_Convert@{DS18B20\_All\_Convert}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_All\_Convert()}{DS18B20\_All\_Convert()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def D\+S18\+B20\+\_\+\+All\+\_\+\+Convert (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Shortcut to do the A/D conversion on all onewire device(s). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em This} & parameter can be one of the enum values\+: \begin{DoxyItemize}
+\item H\+A\+L\+\_\+\+OK\+: if success. \item H\+A\+L\+\_\+\+E\+R\+R\+OR\+: if not success. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 421 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References D\+S18\+B20\+\_\+\+Convert\+T\+\_\+\+C\+M\+D(), D\+S18\+B20\+\_\+\+Reset\+\_\+\+C\+M\+D(), and D\+S18\+B20\+\_\+\+Skip\+R\+O\+M\+\_\+\+C\+M\+D().
+
+
+
+Referenced by aocs\+\_\+get\+\_\+temp().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_a701cdf91bb36ea6702bc305ce160a5d3}\label{_r_t__ds18b20_8c_a701cdf91bb36ea6702bc305ce160a5d3}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_ConvertRead\_Temp@{DS18B20\_ConvertRead\_Temp}}
+\index{DS18B20\_ConvertRead\_Temp@{DS18B20\_ConvertRead\_Temp}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_ConvertRead\_Temp()}{DS18B20\_ConvertRead\_Temp()}}
+{\footnotesize\ttfamily float D\+S18\+B20\+\_\+\+Convert\+Read\+\_\+\+Temp (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{uint8\+\_\+t $\ast$}]{dirb }\end{DoxyParamCaption})}
+
+
+
+Shortcut to do the conversion and read of the temperature in a onewire device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+{\em dirb} & specifies the 64-\/bit lasered R\+OM code of the onewire device L\+S\+BF. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em A} & float value that specifies the temperature of the onewire device or -\/99 if there was a error. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 394 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References D\+S18\+B20\+\_\+\+Convert\+T\+\_\+\+C\+M\+D(), D\+S18\+B20\+\_\+\+Decode\+\_\+\+Temperature(), D\+S18\+B20\+\_\+\+Match\+R\+O\+M\+\_\+\+C\+M\+D(), D\+S18\+B20\+\_\+\+Read\+Scratchpad\+\_\+\+C\+M\+D(), and D\+S18\+B20\+\_\+\+Reset\+\_\+\+C\+M\+D().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_a6d18306f759b223cc0ac0f7935833bf3}\label{_r_t__ds18b20_8c_a6d18306f759b223cc0ac0f7935833bf3}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_ConvertT\_CMD@{DS18B20\_ConvertT\_CMD}}
+\index{DS18B20\_ConvertT\_CMD@{DS18B20\_ConvertT\_CMD}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_ConvertT\_CMD()}{DS18B20\_ConvertT\_CMD()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def D\+S18\+B20\+\_\+\+Convert\+T\+\_\+\+C\+MD (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Send a command to convert A/D the temperature of the selected onewire device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em This} & parameter can be one of the enum values\+: \begin{DoxyItemize}
+\item H\+A\+L\+\_\+\+OK\+: if A\+DC could be done. \item H\+A\+L\+\_\+\+E\+R\+R\+OR\+: if A\+DC could not be performed. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 206 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References \+\_\+write\+\_\+\+Byte(), and delay\+Micro().
+
+
+
+Referenced by D\+S18\+B20\+\_\+\+All\+\_\+\+Convert(), and D\+S18\+B20\+\_\+\+Convert\+Read\+\_\+\+Temp().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_aaa8c291e61d0373b33666d569082e231}\label{_r_t__ds18b20_8c_aaa8c291e61d0373b33666d569082e231}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_CopyScratchpad\_CMD@{DS18B20\_CopyScratchpad\_CMD}}
+\index{DS18B20\_CopyScratchpad\_CMD@{DS18B20\_CopyScratchpad\_CMD}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_CopyScratchpad\_CMD()}{DS18B20\_CopyScratchpad\_CMD()}}
+{\footnotesize\ttfamily void D\+S18\+B20\+\_\+\+Copy\+Scratchpad\+\_\+\+C\+MD (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Send a command to copy TH, TL and configuration register to E\+E\+P\+R\+OM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 302 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References \+\_\+write\+\_\+\+Byte().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_a2fbd659fb5f0286486689ff8cddb10fb}\label{_r_t__ds18b20_8c_a2fbd659fb5f0286486689ff8cddb10fb}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_Decode\_Temperature@{DS18B20\_Decode\_Temperature}}
+\index{DS18B20\_Decode\_Temperature@{DS18B20\_Decode\_Temperature}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_Decode\_Temperature()}{DS18B20\_Decode\_Temperature()}}
+{\footnotesize\ttfamily float D\+S18\+B20\+\_\+\+Decode\+\_\+\+Temperature (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read the scratchpad of the selected onewire device and decode the data temperature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15) \\
+\hline
+{\em data} & specifies two bytes with D\+S18\+B20 temperature. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em A} & float value that specifies the decoded temperature. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 364 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+Referenced by D\+S18\+B20\+\_\+\+Convert\+Read\+\_\+\+Temp(), and D\+S18\+B20\+\_\+\+Read\+\_\+\+Temp().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_adb25f3c91be17d50239e9a02c26d6d07}\label{_r_t__ds18b20_8c_adb25f3c91be17d50239e9a02c26d6d07}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_MatchROM\_CMD@{DS18B20\_MatchROM\_CMD}}
+\index{DS18B20\_MatchROM\_CMD@{DS18B20\_MatchROM\_CMD}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_MatchROM\_CMD()}{DS18B20\_MatchROM\_CMD()}}
+{\footnotesize\ttfamily void D\+S18\+B20\+\_\+\+Match\+R\+O\+M\+\_\+\+C\+MD (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{uint8\+\_\+t $\ast$}]{dirb }\end{DoxyParamCaption})}
+
+
+
+Send a command to select a onewire device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+{\em dirb} & specifies the 64-\/bit lasered R\+OM code of the onewire device L\+S\+BF. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 183 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References \+\_\+write\+\_\+\+Byte().
+
+
+
+Referenced by D\+S18\+B20\+\_\+\+Convert\+Read\+\_\+\+Temp(), D\+S18\+B20\+\_\+\+Read\+\_\+\+Temp(), and D\+S18\+B20\+\_\+\+Set\+Resolution().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_acae2c214541c6f1bd6b5909e9196c028}\label{_r_t__ds18b20_8c_acae2c214541c6f1bd6b5909e9196c028}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_Read\_Temp@{DS18B20\_Read\_Temp}}
+\index{DS18B20\_Read\_Temp@{DS18B20\_Read\_Temp}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_Read\_Temp()}{DS18B20\_Read\_Temp()}}
+{\footnotesize\ttfamily float D\+S18\+B20\+\_\+\+Read\+\_\+\+Temp (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{uint8\+\_\+t $\ast$}]{dirb }\end{DoxyParamCaption})}
+
+
+
+Shortcut to read the temperature of a onewire device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+{\em dirb} & specifies the 64-\/bit lasered R\+OM code of the onewire device L\+S\+BF. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em A} & float value that specifies the temperature of the onewire device or -\/99.\+0 if there was a error. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 440 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References D\+S18\+B20\+\_\+\+Decode\+\_\+\+Temperature(), D\+S18\+B20\+\_\+\+Match\+R\+O\+M\+\_\+\+C\+M\+D(), D\+S18\+B20\+\_\+\+Read\+Scratchpad\+\_\+\+C\+M\+D(), and D\+S18\+B20\+\_\+\+Reset\+\_\+\+C\+M\+D().
+
+
+
+Referenced by aocs\+\_\+get\+\_\+temp().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_ab7629ff8cfd5ba6f7c56177f01c8741b}\label{_r_t__ds18b20_8c_ab7629ff8cfd5ba6f7c56177f01c8741b}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_ReadROM\_CMD@{DS18B20\_ReadROM\_CMD}}
+\index{DS18B20\_ReadROM\_CMD@{DS18B20\_ReadROM\_CMD}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_ReadROM\_CMD()}{DS18B20\_ReadROM\_CMD()}}
+{\footnotesize\ttfamily void D\+S18\+B20\+\_\+\+Read\+R\+O\+M\+\_\+\+C\+MD (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{uint8\+\_\+t $\ast$}]{dirb }\end{DoxyParamCaption})}
+
+
+
+Definition at line 159 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References \+\_\+read\+\_\+\+Byte(), and \+\_\+write\+\_\+\+Byte().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_a303d5d3fabaecd69266003e9340eac10}\label{_r_t__ds18b20_8c_a303d5d3fabaecd69266003e9340eac10}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_ReadScratchpad\_CMD@{DS18B20\_ReadScratchpad\_CMD}}
+\index{DS18B20\_ReadScratchpad\_CMD@{DS18B20\_ReadScratchpad\_CMD}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_ReadScratchpad\_CMD()}{DS18B20\_ReadScratchpad\_CMD()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def D\+S18\+B20\+\_\+\+Read\+Scratchpad\+\_\+\+C\+MD (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint8\+\_\+t}]{n\+\_\+bytes }\end{DoxyParamCaption})}
+
+
+
+Send a command to read bytes of the scratchpad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+{\em data} & buffer where the read bytes will be stored. \\
+\hline
+{\em n\+\_\+bytes} & specifies the numbers of bit to be read.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em This} & parameter can be one of the enum values\+: \begin{DoxyItemize}
+\item H\+A\+L\+\_\+\+OK\+: if success. \item H\+A\+L\+\_\+\+E\+R\+R\+OR\+: if not success. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 233 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References \+\_\+read\+\_\+\+Byte(), and \+\_\+write\+\_\+\+Byte().
+
+
+
+Referenced by D\+S18\+B20\+\_\+\+Convert\+Read\+\_\+\+Temp(), D\+S18\+B20\+\_\+\+Read\+\_\+\+Temp(), and D\+S18\+B20\+\_\+\+Set\+Resolution().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_a319646ec3d8e9570154eb1d5493f144b}\label{_r_t__ds18b20_8c_a319646ec3d8e9570154eb1d5493f144b}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_RecallE2\_CMD@{DS18B20\_RecallE2\_CMD}}
+\index{DS18B20\_RecallE2\_CMD@{DS18B20\_RecallE2\_CMD}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_RecallE2\_CMD()}{DS18B20\_RecallE2\_CMD()}}
+{\footnotesize\ttfamily void D\+S18\+B20\+\_\+\+Recall\+E2\+\_\+\+C\+MD (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Send a command to restore TH, TL and configuration register from E\+E\+P\+R\+OM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 315 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References \+\_\+write\+\_\+\+Byte().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_a86040784bb45a6ee55b4431e31d541df}\label{_r_t__ds18b20_8c_a86040784bb45a6ee55b4431e31d541df}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_Reset\_CMD@{DS18B20\_Reset\_CMD}}
+\index{DS18B20\_Reset\_CMD@{DS18B20\_Reset\_CMD}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_Reset\_CMD()}{DS18B20\_Reset\_CMD()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def D\+S18\+B20\+\_\+\+Reset\+\_\+\+C\+MD (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Send a command to initializes the onewire communication and the connected device(s). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em This} & parameter can be one of the enum values\+: \begin{DoxyItemize}
+\item H\+A\+L\+\_\+\+OK\+: if there are device(s) on the onewire communication. \item H\+A\+L\+\_\+\+E\+R\+R\+OR\+: if there aren\textquotesingle{}t device(s) on the onewire communication. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 145 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References delay\+Micro().
+
+
+
+Referenced by aocs\+\_\+config\+\_\+temp(), aocs\+\_\+get\+\_\+temp(), D\+S18\+B20\+\_\+\+All\+\_\+\+Convert(), D\+S18\+B20\+\_\+\+Convert\+Read\+\_\+\+Temp(), D\+S18\+B20\+\_\+\+Read\+\_\+\+Temp(), and D\+S18\+B20\+\_\+\+Set\+Resolution().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_afb3b333f2a3ad7708238dc13bcfe06d4}\label{_r_t__ds18b20_8c_afb3b333f2a3ad7708238dc13bcfe06d4}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_SearchROM\_CMD@{DS18B20\_SearchROM\_CMD}}
+\index{DS18B20\_SearchROM\_CMD@{DS18B20\_SearchROM\_CMD}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_SearchROM\_CMD()}{DS18B20\_SearchROM\_CMD()}}
+{\footnotesize\ttfamily void D\+S18\+B20\+\_\+\+Search\+R\+O\+M\+\_\+\+C\+MD (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{uint8\+\_\+t $\ast$}]{dirb }\end{DoxyParamCaption})}
+
+
+
+Send a command to search all R\+OM codes of onewire bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+{\em dirb} & Pointer to a direction of D\+S18\+B20 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 275 of file R\+T\+\_\+ds18b20.\+c.
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_a393b26483ba999474c1cb4a63293c241}\label{_r_t__ds18b20_8c_a393b26483ba999474c1cb4a63293c241}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_SetResolution@{DS18B20\_SetResolution}}
+\index{DS18B20\_SetResolution@{DS18B20\_SetResolution}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_SetResolution()}{DS18B20\_SetResolution()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def D\+S18\+B20\+\_\+\+Set\+Resolution (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{uint8\+\_\+t $\ast$}]{dirb,  }\item[{ds18b20\+\_\+resolution\+\_\+t}]{resol }\end{DoxyParamCaption})}
+
+
+
+Shortcut to read the temperature of a onewire device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+{\em dirb} & Pointer to a direction of D\+S18\+B20 \\
+\hline
+{\em resol} & Resolution to be set \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em This} & parameter can be one of the enum values\+: \begin{DoxyItemize}
+\item H\+A\+L\+\_\+\+OK\+: if success. \item H\+A\+L\+\_\+\+E\+R\+R\+OR\+: if not success. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 339 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References D\+S18\+B20\+\_\+\+Match\+R\+O\+M\+\_\+\+C\+M\+D(), D\+S18\+B20\+\_\+\+Read\+Scratchpad\+\_\+\+C\+M\+D(), D\+S18\+B20\+\_\+\+Reset\+\_\+\+C\+M\+D(), and D\+S18\+B20\+\_\+\+Write\+Scratchpad\+\_\+\+C\+M\+D().
+
+
+
+Referenced by aocs\+\_\+config\+\_\+temp().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_a3123cd7e2d5fa1341d877b7fb0754ad8}\label{_r_t__ds18b20_8c_a3123cd7e2d5fa1341d877b7fb0754ad8}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_SkipROM\_CMD@{DS18B20\_SkipROM\_CMD}}
+\index{DS18B20\_SkipROM\_CMD@{DS18B20\_SkipROM\_CMD}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_SkipROM\_CMD()}{DS18B20\_SkipROM\_CMD()}}
+{\footnotesize\ttfamily void D\+S18\+B20\+\_\+\+Skip\+R\+O\+M\+\_\+\+C\+MD (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Send a command to select all onewire device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 289 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References \+\_\+write\+\_\+\+Byte().
+
+
+
+Referenced by D\+S18\+B20\+\_\+\+All\+\_\+\+Convert().
+
+\mbox{\Hypertarget{_r_t__ds18b20_8c_a74ad4789fcd5977fea78f6bcdb6807bd}\label{_r_t__ds18b20_8c_a74ad4789fcd5977fea78f6bcdb6807bd}} 
+\index{RT\_ds18b20.c@{RT\_ds18b20.c}!DS18B20\_WriteScratchpad\_CMD@{DS18B20\_WriteScratchpad\_CMD}}
+\index{DS18B20\_WriteScratchpad\_CMD@{DS18B20\_WriteScratchpad\_CMD}!RT\_ds18b20.c@{RT\_ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_WriteScratchpad\_CMD()}{DS18B20\_WriteScratchpad\_CMD()}}
+{\footnotesize\ttfamily void D\+S18\+B20\+\_\+\+Write\+Scratchpad\+\_\+\+C\+MD (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{uint8\+\_\+t}]{th\+\_\+reg,  }\item[{uint8\+\_\+t}]{tl\+\_\+reg,  }\item[{ds18b20\+\_\+resolution\+\_\+t}]{resol }\end{DoxyParamCaption})}
+
+
+
+Send a command to write in scratchpad of the selected onewire device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..K) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). \\
+\hline
+{\em th\+\_\+reg} & specifies the value to be written in the TH register. \\
+\hline
+{\em tl\+\_\+reg} & specifies the value to be written in the TL register. \\
+\hline
+{\em resol} & specifies the resolution of the A\+DC onewire device. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 257 of file R\+T\+\_\+ds18b20.\+c.
+
+
+
+References \+\_\+write\+\_\+\+Byte().
+
+
+
+Referenced by D\+S18\+B20\+\_\+\+Set\+Resolution().
+

@@ -1,0 +1,478 @@
+\hypertarget{intelli_8c}{}\doxysection{intelli.\+c File Reference}
+\label{intelli_8c}\index{intelli.c@{intelli.c}}
+
+
+\+: O\+BC Intelligence for Fy\+C\+US 2023.  
+
+
+{\ttfamily \#include \char`\"{}intelli.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{intelli_8c_a1139b3674ec744e25d66804c0122d1a3}{set\+\_\+time}} (uint8\+\_\+t hours, uint8\+\_\+t min, uint8\+\_\+t sec)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{intelli_8c_a3b5169e97f85fd5b3b4242910698b0fd}{get\+\_\+time}} (uint8\+\_\+t $\ast$hours, uint8\+\_\+t $\ast$min, uint8\+\_\+t $\ast$sec)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{intelli_8c_a3cf72b89312ff464c44abfaa42854afb}{data\+Required2bytes}} (tc\+\_\+required\+\_\+data\+\_\+t requirements, uint8\+\_\+t $\ast$pdata)
+\item 
+void \mbox{\hyperlink{intelli_8c_a2e0cd83d4a8f274c9c505e0925af7e5c}{check\+\_\+status}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{intelli_8c_abfac0916f4f43d51c24e37ab28cc673d}{send\+\_\+\+TM}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{intelli_8c_a8bf6fcebebbc33b292cd6015e069d980}{send\+\_\+programmed\+\_\+\+TM}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{intelli_8c_a02291a8a511fc379a1b3a1713a8314d7}{send\+\_\+data\+\_\+saving}} ()
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{intelli_8c_a4da8b75651a0b21e99e288122302ae37}{send\+\_\+ack}} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{intelli_8c_a036ae889b046b2a5c10372e14b5b93a3}{send\+\_\+nack}} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart)
+\item 
+void \mbox{\hyperlink{intelli_8c_a8667f30f8e8694a09779d4d92bc3e744}{intelli\+O\+B\+C\+\_\+\+TC}} (apid\+\_\+t apid, uint8\+\_\+t $\ast$data)
+\item 
+void \mbox{\hyperlink{intelli_8c_a1321b889e9edeb6819285b3e84a188c1}{intelli\+O\+B\+C\+\_\+\+TM}} (uint8\+\_\+t apid, uint8\+\_\+t $\ast$data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{intelli_8c_adb5d6ee935a1fa54b1a3ef8df42ee43d}{modem\+\_\+buffer\+\_\+tx}} \mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+S\+\_\+\+S\+I\+ZE+B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+I\+ZE\mbox{]} = \{0\}
+\item 
+uint8\+\_\+t $\ast$const \mbox{\hyperlink{intelli_8c_a97483d3a35107d5191eeeb976d336ee3}{modem\+\_\+data\+\_\+tx}} = \&\mbox{\hyperlink{intelli_8c_adb5d6ee935a1fa54b1a3ef8df42ee43d}{modem\+\_\+buffer\+\_\+tx}}\mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{intelli_8c_a29826483de470e7d66a81dce7b003daa}{eps\+\_\+buffer\+\_\+tx}} \mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+S\+\_\+\+S\+I\+ZE+B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+I\+ZE\mbox{]} = \{0\}
+\item 
+uint8\+\_\+t $\ast$const \mbox{\hyperlink{intelli_8c_a1bec617fdadccf776c771f02e48cf7f3}{eps\+\_\+data\+\_\+tx}} = \&\mbox{\hyperlink{intelli_8c_a29826483de470e7d66a81dce7b003daa}{eps\+\_\+buffer\+\_\+tx}}\mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{intelli_8c_a9c7ed85ae0cf7c8884c67edb5418d0d5}{buffer\+\_\+data}} \mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE\mbox{]}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{intelli_8c_a0e8d68e296cc04c5d99c3fd469d24f21}{last\+\_\+tc\+\_\+apid}} = 0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{intelli_8c_a7d9fc48300a7148e844d3e801b53b524}{last\+\_\+tc\+\_\+number}} = 0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{intelli_8c_a3643d35a6dfc1b0e9eb12aef827b78d4}{last\+\_\+tm\+\_\+apid}} = 0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{intelli_8c_a069e122e3a76b7c992cf952ec509456b}{last\+\_\+tm\+\_\+number}} = 0
+\item 
+tc\+\_\+required\+\_\+data\+\_\+t \mbox{\hyperlink{intelli_8c_aae85a26eb5898905d72eed15422f36f1}{programmed\+\_\+tm}}
+\item 
+sc\+\_\+status\+\_\+t \mbox{\hyperlink{intelli_8c_ab0b8457e6bc5c130a2f72f15eb7550da}{sc\+\_\+status}}
+\item 
+eps\+\_\+data\+\_\+t \mbox{\hyperlink{intelli_8c_a13ac61d2f0fe01648d44edaf336f8e00}{eps}}
+\item 
+R\+T\+C\+\_\+\+Time\+Type\+Def \mbox{\hyperlink{intelli_8c_a1319f00344dc5e0b51e868ea6a7284f1}{rtc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: O\+BC Intelligence for Fy\+C\+US 2023. 
+
+\begin{DoxyAuthor}{Author}
+Rubén Torres Bermúdez \href{mailto:rubentorresbermudez@gmail.com}{\texttt{ rubentorresbermudez@gmail.\+com}}
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Created on\+: 10.\+09.\+2023
+
+Description\+: This library is used to control the O\+BC intelligence in Fy\+C\+US 2023 project
+
+Copyright (C) 2023 Rubén Torres Bermúdez 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{intelli_8c_a2e0cd83d4a8f274c9c505e0925af7e5c}\label{intelli_8c_a2e0cd83d4a8f274c9c505e0925af7e5c}} 
+\index{intelli.c@{intelli.c}!check\_status@{check\_status}}
+\index{check\_status@{check\_status}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{check\_status()}{check\_status()}}
+{\footnotesize\ttfamily void check\+\_\+status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Check status of different subsystems and components 
+
+Definition at line 227 of file intelli.\+c.
+
+
+
+References aocs\+\_\+config\+\_\+altimeter(), aocs\+\_\+config\+\_\+imu(), aocs\+\_\+config\+\_\+magnetometer(), aocs\+\_\+config\+\_\+temp(), and sc\+\_\+status.
+
+\mbox{\Hypertarget{intelli_8c_a3cf72b89312ff464c44abfaa42854afb}\label{intelli_8c_a3cf72b89312ff464c44abfaa42854afb}} 
+\index{intelli.c@{intelli.c}!dataRequired2bytes@{dataRequired2bytes}}
+\index{dataRequired2bytes@{dataRequired2bytes}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{dataRequired2bytes()}{dataRequired2bytes()}}
+{\footnotesize\ttfamily uint8\+\_\+t data\+Required2bytes (\begin{DoxyParamCaption}\item[{tc\+\_\+required\+\_\+data\+\_\+t}]{requirements,  }\item[{uint8\+\_\+t $\ast$}]{pdata }\end{DoxyParamCaption})}
+
+Set a byte array with data required for transmission 
+\begin{DoxyParams}{Parameters}
+{\em requirements} & Data required. See tc\+\_\+required\+\_\+data\+\_\+t \\
+\hline
+{\em pdata} & Pointer to byte array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of byte array 
+\end{DoxyReturn}
+
+
+Definition at line 135 of file intelli.\+c.
+
+
+
+Referenced by intelli\+O\+B\+C\+\_\+\+T\+C(), send\+\_\+data\+\_\+saving(), and send\+\_\+programmed\+\_\+\+T\+M().
+
+\mbox{\Hypertarget{intelli_8c_a3b5169e97f85fd5b3b4242910698b0fd}\label{intelli_8c_a3b5169e97f85fd5b3b4242910698b0fd}} 
+\index{intelli.c@{intelli.c}!get\_time@{get\_time}}
+\index{get\_time@{get\_time}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{get\_time()}{get\_time()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def get\+\_\+time (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{hours,  }\item[{uint8\+\_\+t $\ast$}]{min,  }\item[{uint8\+\_\+t $\ast$}]{sec }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em hours} & \\
+\hline
+{\em min} & \\
+\hline
+{\em sec} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 120 of file intelli.\+c.
+
+
+
+References rtc.
+
+\mbox{\Hypertarget{intelli_8c_a8667f30f8e8694a09779d4d92bc3e744}\label{intelli_8c_a8667f30f8e8694a09779d4d92bc3e744}} 
+\index{intelli.c@{intelli.c}!intelliOBC\_TC@{intelliOBC\_TC}}
+\index{intelliOBC\_TC@{intelliOBC\_TC}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{intelliOBC\_TC()}{intelliOBC\_TC()}}
+{\footnotesize\ttfamily void intelli\+O\+B\+C\+\_\+\+TC (\begin{DoxyParamCaption}\item[{apid\+\_\+t}]{apid,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+Intelligence for a received telecommand 
+\begin{DoxyParams}{Parameters}
+{\em apid} & Received A\+P\+ID \\
+\hline
+{\em data} & Received data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 352 of file intelli.\+c.
+
+
+
+References buffer\+\_\+data, bus\+\_\+packet\+\_\+\+Encode\+Packetize(), data\+Required2bytes(), modem\+\_\+data\+\_\+tx, programmed\+\_\+tm, sc\+\_\+status, and send\+\_\+\+T\+M().
+
+\mbox{\Hypertarget{intelli_8c_a1321b889e9edeb6819285b3e84a188c1}\label{intelli_8c_a1321b889e9edeb6819285b3e84a188c1}} 
+\index{intelli.c@{intelli.c}!intelliOBC\_TM@{intelliOBC\_TM}}
+\index{intelliOBC\_TM@{intelliOBC\_TM}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{intelliOBC\_TM()}{intelliOBC\_TM()}}
+{\footnotesize\ttfamily void intelli\+O\+B\+C\+\_\+\+TM (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{apid,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+Intelligence for a received telemetry 
+\begin{DoxyParams}{Parameters}
+{\em apid} & Received A\+P\+ID \\
+\hline
+{\em data} & Received data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 464 of file intelli.\+c.
+
+
+
+References eps, and sc\+\_\+status.
+
+\mbox{\Hypertarget{intelli_8c_a4da8b75651a0b21e99e288122302ae37}\label{intelli_8c_a4da8b75651a0b21e99e288122302ae37}} 
+\index{intelli.c@{intelli.c}!send\_ack@{send\_ack}}
+\index{send\_ack@{send\_ack}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{send\_ack()}{send\_ack()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def send\+\_\+ack (\begin{DoxyParamCaption}\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
+
+Send A\+CK 
+\begin{DoxyParams}{Parameters}
+{\em huart} & U\+A\+RT handle to send packet. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 313 of file intelli.\+c.
+
+
+
+References bus\+\_\+packet\+\_\+\+Encode\+Packetize(), and B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+NC.
+
+\mbox{\Hypertarget{intelli_8c_a02291a8a511fc379a1b3a1713a8314d7}\label{intelli_8c_a02291a8a511fc379a1b3a1713a8314d7}} 
+\index{intelli.c@{intelli.c}!send\_data\_saving@{send\_data\_saving}}
+\index{send\_data\_saving@{send\_data\_saving}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{send\_data\_saving()}{send\_data\_saving()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def send\+\_\+data\+\_\+saving (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Send telemetry data to modem for saving data \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 285 of file intelli.\+c.
+
+
+
+References buffer\+\_\+data, bus\+\_\+packet\+\_\+\+Encode\+Packetize(), data\+Required2bytes(), modem\+\_\+data\+\_\+tx, and send\+\_\+\+T\+M().
+
+\mbox{\Hypertarget{intelli_8c_a036ae889b046b2a5c10372e14b5b93a3}\label{intelli_8c_a036ae889b046b2a5c10372e14b5b93a3}} 
+\index{intelli.c@{intelli.c}!send\_nack@{send\_nack}}
+\index{send\_nack@{send\_nack}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{send\_nack()}{send\_nack()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def send\+\_\+nack (\begin{DoxyParamCaption}\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
+
+Send N\+A\+CK 
+\begin{DoxyParams}{Parameters}
+{\em huart} & U\+A\+RT handle to send packet. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 330 of file intelli.\+c.
+
+
+
+References bus\+\_\+packet\+\_\+\+Encode\+Packetize(), and B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+NC.
+
+\mbox{\Hypertarget{intelli_8c_a8bf6fcebebbc33b292cd6015e069d980}\label{intelli_8c_a8bf6fcebebbc33b292cd6015e069d980}} 
+\index{intelli.c@{intelli.c}!send\_programmed\_TM@{send\_programmed\_TM}}
+\index{send\_programmed\_TM@{send\_programmed\_TM}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{send\_programmed\_TM()}{send\_programmed\_TM()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def send\+\_\+programmed\+\_\+\+TM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Send programmed telemetry data to modem for transmission to ground \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 257 of file intelli.\+c.
+
+
+
+References buffer\+\_\+data, bus\+\_\+packet\+\_\+\+Encode\+Packetize(), data\+Required2bytes(), modem\+\_\+data\+\_\+tx, programmed\+\_\+tm, and send\+\_\+\+T\+M().
+
+\mbox{\Hypertarget{intelli_8c_abfac0916f4f43d51c24e37ab28cc673d}\label{intelli_8c_abfac0916f4f43d51c24e37ab28cc673d}} 
+\index{intelli.c@{intelli.c}!send\_TM@{send\_TM}}
+\index{send\_TM@{send\_TM}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{send\_TM()}{send\_TM()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def send\+\_\+\+TM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Send telemetry data to modem for transmission to ground \begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 247 of file intelli.\+c.
+
+
+
+References B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+NC, modem\+\_\+buffer\+\_\+tx, and modem\+\_\+data\+\_\+tx.
+
+
+
+Referenced by intelli\+O\+B\+C\+\_\+\+T\+C(), send\+\_\+data\+\_\+saving(), and send\+\_\+programmed\+\_\+\+T\+M().
+
+\mbox{\Hypertarget{intelli_8c_a1139b3674ec744e25d66804c0122d1a3}\label{intelli_8c_a1139b3674ec744e25d66804c0122d1a3}} 
+\index{intelli.c@{intelli.c}!set\_time@{set\_time}}
+\index{set\_time@{set\_time}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{set\_time()}{set\_time()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def set\+\_\+time (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{hours,  }\item[{uint8\+\_\+t}]{min,  }\item[{uint8\+\_\+t}]{sec }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em hours} & \\
+\hline
+{\em min} & \\
+\hline
+{\em sec} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 105 of file intelli.\+c.
+
+
+
+References rtc.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{intelli_8c_a9c7ed85ae0cf7c8884c67edb5418d0d5}\label{intelli_8c_a9c7ed85ae0cf7c8884c67edb5418d0d5}} 
+\index{intelli.c@{intelli.c}!buffer\_data@{buffer\_data}}
+\index{buffer\_data@{buffer\_data}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{buffer\_data}{buffer\_data}}
+{\footnotesize\ttfamily uint8\+\_\+t buffer\+\_\+data\mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE\mbox{]}}
+
+
+
+Definition at line 30 of file intelli.\+c.
+
+
+
+Referenced by intelli\+O\+B\+C\+\_\+\+T\+C(), send\+\_\+data\+\_\+saving(), and send\+\_\+programmed\+\_\+\+T\+M().
+
+\mbox{\Hypertarget{intelli_8c_a13ac61d2f0fe01648d44edaf336f8e00}\label{intelli_8c_a13ac61d2f0fe01648d44edaf336f8e00}} 
+\index{intelli.c@{intelli.c}!eps@{eps}}
+\index{eps@{eps}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{eps}{eps}}
+{\footnotesize\ttfamily eps\+\_\+data\+\_\+t eps}
+
+
+
+Definition at line 45 of file intelli.\+c.
+
+
+
+Referenced by intelli\+O\+B\+C\+\_\+\+T\+M().
+
+\mbox{\Hypertarget{intelli_8c_a29826483de470e7d66a81dce7b003daa}\label{intelli_8c_a29826483de470e7d66a81dce7b003daa}} 
+\index{intelli.c@{intelli.c}!eps\_buffer\_tx@{eps\_buffer\_tx}}
+\index{eps\_buffer\_tx@{eps\_buffer\_tx}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{eps\_buffer\_tx}{eps\_buffer\_tx}}
+{\footnotesize\ttfamily uint8\+\_\+t eps\+\_\+buffer\+\_\+tx\mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+S\+\_\+\+S\+I\+ZE+B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+I\+ZE\mbox{]} = \{0\}}
+
+
+
+Definition at line 27 of file intelli.\+c.
+
+\mbox{\Hypertarget{intelli_8c_a1bec617fdadccf776c771f02e48cf7f3}\label{intelli_8c_a1bec617fdadccf776c771f02e48cf7f3}} 
+\index{intelli.c@{intelli.c}!eps\_data\_tx@{eps\_data\_tx}}
+\index{eps\_data\_tx@{eps\_data\_tx}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{eps\_data\_tx}{eps\_data\_tx}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ const eps\+\_\+data\+\_\+tx = \&\mbox{\hyperlink{intelli_8c_a29826483de470e7d66a81dce7b003daa}{eps\+\_\+buffer\+\_\+tx}}\mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+I\+ZE\mbox{]}}
+
+
+
+Definition at line 28 of file intelli.\+c.
+
+\mbox{\Hypertarget{intelli_8c_a0e8d68e296cc04c5d99c3fd469d24f21}\label{intelli_8c_a0e8d68e296cc04c5d99c3fd469d24f21}} 
+\index{intelli.c@{intelli.c}!last\_tc\_apid@{last\_tc\_apid}}
+\index{last\_tc\_apid@{last\_tc\_apid}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{last\_tc\_apid}{last\_tc\_apid}}
+{\footnotesize\ttfamily uint32\+\_\+t last\+\_\+tc\+\_\+apid = 0}
+
+
+
+Definition at line 34 of file intelli.\+c.
+
+\mbox{\Hypertarget{intelli_8c_a7d9fc48300a7148e844d3e801b53b524}\label{intelli_8c_a7d9fc48300a7148e844d3e801b53b524}} 
+\index{intelli.c@{intelli.c}!last\_tc\_number@{last\_tc\_number}}
+\index{last\_tc\_number@{last\_tc\_number}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{last\_tc\_number}{last\_tc\_number}}
+{\footnotesize\ttfamily uint32\+\_\+t last\+\_\+tc\+\_\+number = 0}
+
+
+
+Definition at line 35 of file intelli.\+c.
+
+\mbox{\Hypertarget{intelli_8c_a3643d35a6dfc1b0e9eb12aef827b78d4}\label{intelli_8c_a3643d35a6dfc1b0e9eb12aef827b78d4}} 
+\index{intelli.c@{intelli.c}!last\_tm\_apid@{last\_tm\_apid}}
+\index{last\_tm\_apid@{last\_tm\_apid}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{last\_tm\_apid}{last\_tm\_apid}}
+{\footnotesize\ttfamily uint32\+\_\+t last\+\_\+tm\+\_\+apid = 0}
+
+
+
+Definition at line 36 of file intelli.\+c.
+
+\mbox{\Hypertarget{intelli_8c_a069e122e3a76b7c992cf952ec509456b}\label{intelli_8c_a069e122e3a76b7c992cf952ec509456b}} 
+\index{intelli.c@{intelli.c}!last\_tm\_number@{last\_tm\_number}}
+\index{last\_tm\_number@{last\_tm\_number}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{last\_tm\_number}{last\_tm\_number}}
+{\footnotesize\ttfamily uint32\+\_\+t last\+\_\+tm\+\_\+number = 0}
+
+
+
+Definition at line 37 of file intelli.\+c.
+
+\mbox{\Hypertarget{intelli_8c_adb5d6ee935a1fa54b1a3ef8df42ee43d}\label{intelli_8c_adb5d6ee935a1fa54b1a3ef8df42ee43d}} 
+\index{intelli.c@{intelli.c}!modem\_buffer\_tx@{modem\_buffer\_tx}}
+\index{modem\_buffer\_tx@{modem\_buffer\_tx}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{modem\_buffer\_tx}{modem\_buffer\_tx}}
+{\footnotesize\ttfamily uint8\+\_\+t modem\+\_\+buffer\+\_\+tx\mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+S\+\_\+\+S\+I\+ZE+B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+I\+ZE\mbox{]} = \{0\}}
+
+
+
+Definition at line 24 of file intelli.\+c.
+
+
+
+Referenced by send\+\_\+\+T\+M().
+
+\mbox{\Hypertarget{intelli_8c_a97483d3a35107d5191eeeb976d336ee3}\label{intelli_8c_a97483d3a35107d5191eeeb976d336ee3}} 
+\index{intelli.c@{intelli.c}!modem\_data\_tx@{modem\_data\_tx}}
+\index{modem\_data\_tx@{modem\_data\_tx}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{modem\_data\_tx}{modem\_data\_tx}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ const modem\+\_\+data\+\_\+tx = \&\mbox{\hyperlink{intelli_8c_adb5d6ee935a1fa54b1a3ef8df42ee43d}{modem\+\_\+buffer\+\_\+tx}}\mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+I\+ZE\mbox{]}}
+
+
+
+Definition at line 25 of file intelli.\+c.
+
+
+
+Referenced by intelli\+O\+B\+C\+\_\+\+T\+C(), send\+\_\+data\+\_\+saving(), send\+\_\+programmed\+\_\+\+T\+M(), and send\+\_\+\+T\+M().
+
+\mbox{\Hypertarget{intelli_8c_aae85a26eb5898905d72eed15422f36f1}\label{intelli_8c_aae85a26eb5898905d72eed15422f36f1}} 
+\index{intelli.c@{intelli.c}!programmed\_tm@{programmed\_tm}}
+\index{programmed\_tm@{programmed\_tm}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{programmed\_tm}{programmed\_tm}}
+{\footnotesize\ttfamily tc\+\_\+required\+\_\+data\+\_\+t programmed\+\_\+tm}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{        REQUIRED\_DATA\_GNSS | REQUIRED\_DATA\_ACELL | REQUIRED\_DATA\_GYRO | REQUIRED\_DATA\_TEMPERATURE\_OUTDOOR | REQUIRED\_DATA\_BATTERY\_VOLTAGE}
+
+\end{DoxyCode}
+
+
+Definition at line 38 of file intelli.\+c.
+
+
+
+Referenced by intelli\+O\+B\+C\+\_\+\+T\+C(), and send\+\_\+programmed\+\_\+\+T\+M().
+
+\mbox{\Hypertarget{intelli_8c_a1319f00344dc5e0b51e868ea6a7284f1}\label{intelli_8c_a1319f00344dc5e0b51e868ea6a7284f1}} 
+\index{intelli.c@{intelli.c}!rtc@{rtc}}
+\index{rtc@{rtc}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{rtc}{rtc}}
+{\footnotesize\ttfamily R\+T\+C\+\_\+\+Time\+Type\+Def rtc}
+
+
+
+Definition at line 48 of file intelli.\+c.
+
+
+
+Referenced by get\+\_\+time(), and set\+\_\+time().
+
+\mbox{\Hypertarget{intelli_8c_ab0b8457e6bc5c130a2f72f15eb7550da}\label{intelli_8c_ab0b8457e6bc5c130a2f72f15eb7550da}} 
+\index{intelli.c@{intelli.c}!sc\_status@{sc\_status}}
+\index{sc\_status@{sc\_status}!intelli.c@{intelli.c}}
+\doxysubsubsection{\texorpdfstring{sc\_status}{sc\_status}}
+{\footnotesize\ttfamily sc\+\_\+status\+\_\+t sc\+\_\+status}
+
+
+
+Definition at line 42 of file intelli.\+c.
+
+
+
+Referenced by check\+\_\+status(), intelli\+O\+B\+C\+\_\+\+T\+C(), and intelli\+O\+B\+C\+\_\+\+T\+M().
+

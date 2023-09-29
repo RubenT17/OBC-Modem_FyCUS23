@@ -1,0 +1,281 @@
+\hypertarget{lsm6dso_8c}{}\doxysection{lsm6dso.\+c File Reference}
+\label{lsm6dso_8c}\index{lsm6dso.c@{lsm6dso.c}}
+
+
+\+: L\+S\+M6\+D\+SO I\+MU library.  
+
+
+{\ttfamily \#include \char`\"{}lsm6dso.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lsm6dso_8c_a65a3214551ce849a567036ce32f31191}{I\+N\+C\+\_\+\+L\+S\+M6\+D\+S\+O\+\_\+\+C\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{lsm6dso_8c_a6abb3f1da2c34a8a94e031d21c19e22e}{lsm6dso\+\_\+config}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{lsm6dso_8c_a3cae0d3d94a86f199b2a808896f3e5b2}{lsm6dso\+\_\+read\+Accel}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout, int16\+\_\+t $\ast$x, int16\+\_\+t $\ast$y, int16\+\_\+t $\ast$z)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{lsm6dso_8c_a1b1b1892d73361c58b51512bb9c26449}{lsm6dso\+\_\+read\+Gyro}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout, int16\+\_\+t $\ast$x, int16\+\_\+t $\ast$y, int16\+\_\+t $\ast$z)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{lsm6dso_8c_a412345411ba9f53f5b946b8d1941f0af}{lsm6dso\+\_\+read\+Temp}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout, int16\+\_\+t $\ast$temp)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{lsm6dso_8c_a25f2abb659e775d4dcb6d29bea98b021}{lsm6dso\+\_\+read\+Status}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{lsm6dso_8c_a356fb1878d70e2942fdd5b557249659c}{lsm6dso\+\_\+who\+Iam}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{lsm6dso_8c_ab503c318fe105d58bbe5564f695ad1d2}{lsm6dso\+\_\+reset\+Software}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{lsm6dso_8c_aaef12d3651b21527268e86b508c23229}{lsm6dso\+\_\+reset\+Memory}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: L\+S\+M6\+D\+SO I\+MU library. 
+
+\begin{DoxyAuthor}{Author}
+Rubén Torres Bermúdez \href{mailto:rubentorresbermudez@gmail.com}{\texttt{ rubentorresbermudez@gmail.\+com}}
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Created on\+: 25.\+06.\+2023
+
+Description\+: This library is used to control a L\+S\+M6\+D\+SO I\+MU.
+
+Copyright (C) 2023 Rubén Torres Bermúdez 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{lsm6dso_8c_a65a3214551ce849a567036ce32f31191}\label{lsm6dso_8c_a65a3214551ce849a567036ce32f31191}} 
+\index{lsm6dso.c@{lsm6dso.c}!INC\_LSM6DSO\_C\_@{INC\_LSM6DSO\_C\_}}
+\index{INC\_LSM6DSO\_C\_@{INC\_LSM6DSO\_C\_}!lsm6dso.c@{lsm6dso.c}}
+\doxysubsubsection{\texorpdfstring{INC\_LSM6DSO\_C\_}{INC\_LSM6DSO\_C\_}}
+{\footnotesize\ttfamily \#define I\+N\+C\+\_\+\+L\+S\+M6\+D\+S\+O\+\_\+\+C\+\_\+}
+
+
+
+Definition at line 20 of file lsm6dso.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lsm6dso_8c_a6abb3f1da2c34a8a94e031d21c19e22e}\label{lsm6dso_8c_a6abb3f1da2c34a8a94e031d21c19e22e}} 
+\index{lsm6dso.c@{lsm6dso.c}!lsm6dso\_config@{lsm6dso\_config}}
+\index{lsm6dso\_config@{lsm6dso\_config}!lsm6dso.c@{lsm6dso.c}}
+\doxysubsubsection{\texorpdfstring{lsm6dso\_config()}{lsm6dso\_config()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def lsm6dso\+\_\+config (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+Common configuration for L\+S\+M6\+D\+SO 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file lsm6dso.\+c.
+
+
+
+Referenced by aocs\+\_\+config\+\_\+imu().
+
+\mbox{\Hypertarget{lsm6dso_8c_a3cae0d3d94a86f199b2a808896f3e5b2}\label{lsm6dso_8c_a3cae0d3d94a86f199b2a808896f3e5b2}} 
+\index{lsm6dso.c@{lsm6dso.c}!lsm6dso\_readAccel@{lsm6dso\_readAccel}}
+\index{lsm6dso\_readAccel@{lsm6dso\_readAccel}!lsm6dso.c@{lsm6dso.c}}
+\doxysubsubsection{\texorpdfstring{lsm6dso\_readAccel()}{lsm6dso\_readAccel()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def lsm6dso\+\_\+read\+Accel (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout,  }\item[{int16\+\_\+t $\ast$}]{x,  }\item[{int16\+\_\+t $\ast$}]{y,  }\item[{int16\+\_\+t $\ast$}]{z }\end{DoxyParamCaption})}
+
+Read linear acceleration sensor 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+{\em x} & Pointer to x-\/axis value \\
+\hline
+{\em y} & Pointer to y-\/axis value \\
+\hline
+{\em z} & Pointer to z-\/axis value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 144 of file lsm6dso.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+accel(), and aocs\+\_\+get\+\_\+imu().
+
+\mbox{\Hypertarget{lsm6dso_8c_a1b1b1892d73361c58b51512bb9c26449}\label{lsm6dso_8c_a1b1b1892d73361c58b51512bb9c26449}} 
+\index{lsm6dso.c@{lsm6dso.c}!lsm6dso\_readGyro@{lsm6dso\_readGyro}}
+\index{lsm6dso\_readGyro@{lsm6dso\_readGyro}!lsm6dso.c@{lsm6dso.c}}
+\doxysubsubsection{\texorpdfstring{lsm6dso\_readGyro()}{lsm6dso\_readGyro()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def lsm6dso\+\_\+read\+Gyro (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout,  }\item[{int16\+\_\+t $\ast$}]{x,  }\item[{int16\+\_\+t $\ast$}]{y,  }\item[{int16\+\_\+t $\ast$}]{z }\end{DoxyParamCaption})}
+
+Read angular acceleration sensor 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+{\em x} & Pointer to x-\/axis value \\
+\hline
+{\em y} & Pointer to y-\/axis value \\
+\hline
+{\em z} & Pointer to z-\/axis value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 171 of file lsm6dso.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+gyro(), and aocs\+\_\+get\+\_\+imu().
+
+\mbox{\Hypertarget{lsm6dso_8c_a25f2abb659e775d4dcb6d29bea98b021}\label{lsm6dso_8c_a25f2abb659e775d4dcb6d29bea98b021}} 
+\index{lsm6dso.c@{lsm6dso.c}!lsm6dso\_readStatus@{lsm6dso\_readStatus}}
+\index{lsm6dso\_readStatus@{lsm6dso\_readStatus}!lsm6dso.c@{lsm6dso.c}}
+\doxysubsubsection{\texorpdfstring{lsm6dso\_readStatus()}{lsm6dso\_readStatus()}}
+{\footnotesize\ttfamily uint8\+\_\+t lsm6dso\+\_\+read\+Status (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+Read status register 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 216 of file lsm6dso.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+accel(), aocs\+\_\+get\+\_\+gyro(), and aocs\+\_\+get\+\_\+imu().
+
+\mbox{\Hypertarget{lsm6dso_8c_a412345411ba9f53f5b946b8d1941f0af}\label{lsm6dso_8c_a412345411ba9f53f5b946b8d1941f0af}} 
+\index{lsm6dso.c@{lsm6dso.c}!lsm6dso\_readTemp@{lsm6dso\_readTemp}}
+\index{lsm6dso\_readTemp@{lsm6dso\_readTemp}!lsm6dso.c@{lsm6dso.c}}
+\doxysubsubsection{\texorpdfstring{lsm6dso\_readTemp()}{lsm6dso\_readTemp()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def lsm6dso\+\_\+read\+Temp (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout,  }\item[{int16\+\_\+t $\ast$}]{temp }\end{DoxyParamCaption})}
+
+Read temperature sensor 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+{\em temp} & Pointer to temperature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 196 of file lsm6dso.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+imu().
+
+\mbox{\Hypertarget{lsm6dso_8c_aaef12d3651b21527268e86b508c23229}\label{lsm6dso_8c_aaef12d3651b21527268e86b508c23229}} 
+\index{lsm6dso.c@{lsm6dso.c}!lsm6dso\_resetMemory@{lsm6dso\_resetMemory}}
+\index{lsm6dso\_resetMemory@{lsm6dso\_resetMemory}!lsm6dso.c@{lsm6dso.c}}
+\doxysubsubsection{\texorpdfstring{lsm6dso\_resetMemory()}{lsm6dso\_resetMemory()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def lsm6dso\+\_\+reset\+Memory (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+Reset memory contents 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 267 of file lsm6dso.\+c.
+
+\mbox{\Hypertarget{lsm6dso_8c_ab503c318fe105d58bbe5564f695ad1d2}\label{lsm6dso_8c_ab503c318fe105d58bbe5564f695ad1d2}} 
+\index{lsm6dso.c@{lsm6dso.c}!lsm6dso\_resetSoftware@{lsm6dso\_resetSoftware}}
+\index{lsm6dso\_resetSoftware@{lsm6dso\_resetSoftware}!lsm6dso.c@{lsm6dso.c}}
+\doxysubsubsection{\texorpdfstring{lsm6dso\_resetSoftware()}{lsm6dso\_resetSoftware()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def lsm6dso\+\_\+reset\+Software (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+Software reset 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 246 of file lsm6dso.\+c.
+
+\mbox{\Hypertarget{lsm6dso_8c_a356fb1878d70e2942fdd5b557249659c}\label{lsm6dso_8c_a356fb1878d70e2942fdd5b557249659c}} 
+\index{lsm6dso.c@{lsm6dso.c}!lsm6dso\_whoIam@{lsm6dso\_whoIam}}
+\index{lsm6dso\_whoIam@{lsm6dso\_whoIam}!lsm6dso.c@{lsm6dso.c}}
+\doxysubsubsection{\texorpdfstring{lsm6dso\_whoIam()}{lsm6dso\_whoIam()}}
+{\footnotesize\ttfamily uint8\+\_\+t lsm6dso\+\_\+who\+Iam (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+Read W\+HO I AM register 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Device response 
+\end{DoxyReturn}
+
+
+Definition at line 232 of file lsm6dso.\+c.
+
+
+
+References hi2c1.
+
+
+
+Referenced by aocs\+\_\+config\+\_\+imu().
+

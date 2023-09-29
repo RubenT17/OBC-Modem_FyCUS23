@@ -1,0 +1,142 @@
+\hypertarget{tf__packet_8c}{}\doxysection{tf\+\_\+packet.\+c File Reference}
+\label{tf__packet_8c}\index{tf\_packet.c@{tf\_packet.c}}
+
+
+\+: Encoder and decoder for TF (U\+S\+LP) Fy\+C\+US 2023  
+
+
+{\ttfamily \#include \char`\"{}tf\+\_\+packet.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{tf__packet_8c_a9d827799ae9c777e1473608057547026}{tf\+\_\+packet\+\_\+\+Decode}} (uint8\+\_\+t $\ast$buffer\+\_\+in, uint32\+\_\+t buffer\+\_\+length, tfph\+\_\+packet\+\_\+t $\ast$tfph, tfdf\+\_\+packet\+\_\+t $\ast$tfdf)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{tf__packet_8c_a5bb751969032a100d2865c6b7c45749f}{tf\+\_\+packet\+\_\+\+Packetize}} (uint8\+\_\+t data\+\_\+length, tfph\+\_\+packet\+\_\+t $\ast$tfph, tfdf\+\_\+packet\+\_\+t $\ast$tfdf, uint8\+\_\+t $\ast$buffer\+\_\+out)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{tf__packet_8c_ae818310273e379fd27b943a1c9f38681}{tf\+\_\+packet\+\_\+\+Set\+Data}} (uint8\+\_\+t $\ast$data, uint8\+\_\+t data\+\_\+length, uint8\+\_\+t $\ast$V\+Cdata, uint8\+\_\+t V\+Cdata\+\_\+length, tfph\+\_\+packet\+\_\+t $\ast$tfph, tfdf\+\_\+packet\+\_\+t $\ast$tfdf)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{tf__packet_8c_ae6bec43ac7af8ac8fbb6e54abbcbba63}{tf\+\_\+packet\+\_\+\+C\+R\+C16\+C\+C\+S\+D\+S\+Calculate}} (int16\+\_\+t seed, uint8\+\_\+t $\ast$buf, uint32\+\_\+t len)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Encoder and decoder for TF (U\+S\+LP) Fy\+C\+US 2023 
+
+\begin{DoxyAuthor}{Author}
+Rubén Torres Bermúdez \href{mailto:rubentorresbermudez@gmail.com}{\texttt{ rubentorresbermudez@gmail.\+com}}
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Created on\+: 20.\+08.\+2023
+
+Description\+: This library is used to packetize and decode data to communicate the prototype with ground station in Fy\+C\+US 2023.
+
+Example\+: uint8\+\_\+t data\mbox{[}T\+F\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+A\+T\+A\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE\mbox{]} = \{100,13,32,76,12,98,34,12,65,23\}; tfph.\+end\+\_\+flag = T\+F\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+N\+O\+T\+\_\+\+T\+R\+U\+N\+C\+A\+T\+ED; tfph.\+tfvn = T\+F\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+F\+VN; tfph.\+mapid = T\+F\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+AP; tfph.\+vcid = T\+F\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+V\+C\+ID; tfph.\+scid = T\+F\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+C\+ID; tfph.\+source\+\_\+dest\+\_\+id = T\+F\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+O\+U\+R\+CE; tf\+\_\+packet\+\_\+\+Set\+Data(data, 10, N\+U\+L\+L, 0, \&tfph, \&tfdf); tf\+\_\+packet\+\_\+\+Packetize(0, \&tfph, \&tfdf, tf\+\_\+buffer\+\_\+out); if(tf\+\_\+packet\+\_\+\+Decode(tf\+\_\+buffer\+\_\+out, tfph.\+length, \&tfph, \&tfdf) != H\+A\+L\+\_\+\+OK) \{ \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler()}}; \} // Approximated time for max buffer\+: 8830 clock cycles
+
+Warning\+: With S\+T\+M32, define your own C\+RC handle and make sure that is correctly configured\+: bus\+\_\+packet\+\_\+\+C\+R\+C16\+C\+C\+S\+D\+S\+Config();
+
+
+\begin{DoxyItemize}
+\item Poly 16 bits\+: X$^\wedge$16 + X$^\wedge$12 + X$^\wedge$5 + 1
+\item 8 bits input
+\item Input and output without bit inversion
+\end{DoxyItemize}
+
+Copyright (C) 2023 Rubén Torres Bermúdez 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tf__packet_8c_ae6bec43ac7af8ac8fbb6e54abbcbba63}\label{tf__packet_8c_ae6bec43ac7af8ac8fbb6e54abbcbba63}} 
+\index{tf\_packet.c@{tf\_packet.c}!tf\_packet\_CRC16CCSDSCalculate@{tf\_packet\_CRC16CCSDSCalculate}}
+\index{tf\_packet\_CRC16CCSDSCalculate@{tf\_packet\_CRC16CCSDSCalculate}!tf\_packet.c@{tf\_packet.c}}
+\doxysubsubsection{\texorpdfstring{tf\_packet\_CRC16CCSDSCalculate()}{tf\_packet\_CRC16CCSDSCalculate()}}
+{\footnotesize\ttfamily uint16\+\_\+t tf\+\_\+packet\+\_\+\+C\+R\+C16\+C\+C\+S\+D\+S\+Calculate (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{seed,  }\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{uint32\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Definition at line 229 of file tf\+\_\+packet.\+c.
+
+\mbox{\Hypertarget{tf__packet_8c_a9d827799ae9c777e1473608057547026}\label{tf__packet_8c_a9d827799ae9c777e1473608057547026}} 
+\index{tf\_packet.c@{tf\_packet.c}!tf\_packet\_Decode@{tf\_packet\_Decode}}
+\index{tf\_packet\_Decode@{tf\_packet\_Decode}!tf\_packet.c@{tf\_packet.c}}
+\doxysubsubsection{\texorpdfstring{tf\_packet\_Decode()}{tf\_packet\_Decode()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def tf\+\_\+packet\+\_\+\+Decode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buffer\+\_\+in,  }\item[{uint32\+\_\+t}]{buffer\+\_\+length,  }\item[{tfph\+\_\+packet\+\_\+t $\ast$}]{tfph,  }\item[{tfdf\+\_\+packet\+\_\+t $\ast$}]{tfdf }\end{DoxyParamCaption})}
+
+Decode data buffer that contain a Transfer Frame packet 
+\begin{DoxyParams}{Parameters}
+{\em buffer\+\_\+in} & Data buffer with a TF packet to decode \\
+\hline
+{\em buffer\+\_\+length} & Data lenght if T\+F\+PH is not truncated \\
+\hline
+{\em tfph} & Pointer to T\+F\+PH structure to save data \\
+\hline
+{\em tfdf} & Pointer to T\+F\+DF structure to save data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file tf\+\_\+packet.\+c.
+
+
+
+References bus\+\_\+packet\+\_\+\+C\+R\+C16\+C\+C\+S\+D\+S\+Calculate(), and hcrc.
+
+\mbox{\Hypertarget{tf__packet_8c_a5bb751969032a100d2865c6b7c45749f}\label{tf__packet_8c_a5bb751969032a100d2865c6b7c45749f}} 
+\index{tf\_packet.c@{tf\_packet.c}!tf\_packet\_Packetize@{tf\_packet\_Packetize}}
+\index{tf\_packet\_Packetize@{tf\_packet\_Packetize}!tf\_packet.c@{tf\_packet.c}}
+\doxysubsubsection{\texorpdfstring{tf\_packet\_Packetize()}{tf\_packet\_Packetize()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def tf\+\_\+packet\+\_\+\+Packetize (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data\+\_\+length,  }\item[{tfph\+\_\+packet\+\_\+t $\ast$}]{tfph,  }\item[{tfdf\+\_\+packet\+\_\+t $\ast$}]{tfdf,  }\item[{uint8\+\_\+t $\ast$}]{buffer\+\_\+out }\end{DoxyParamCaption})}
+
+Encode and packetize data into a buffer for to be transmitted 
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+length} & data length if truncated T\+F\+PH is used \\
+\hline
+{\em tfph} & Pointer to a T\+F\+PH structure to be transmitted \\
+\hline
+{\em tfdf} & Pointer to a T\+F\+DF structure to be transmitted \\
+\hline
+{\em buffer\+\_\+out} & Pointer to a data buffer for to be transmitted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file tf\+\_\+packet.\+c.
+
+
+
+References bus\+\_\+packet\+\_\+\+C\+R\+C16\+C\+C\+S\+D\+S\+Calculate(), and hcrc.
+
+\mbox{\Hypertarget{tf__packet_8c_ae818310273e379fd27b943a1c9f38681}\label{tf__packet_8c_ae818310273e379fd27b943a1c9f38681}} 
+\index{tf\_packet.c@{tf\_packet.c}!tf\_packet\_SetData@{tf\_packet\_SetData}}
+\index{tf\_packet\_SetData@{tf\_packet\_SetData}!tf\_packet.c@{tf\_packet.c}}
+\doxysubsubsection{\texorpdfstring{tf\_packet\_SetData()}{tf\_packet\_SetData()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def tf\+\_\+packet\+\_\+\+Set\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint8\+\_\+t}]{data\+\_\+length,  }\item[{uint8\+\_\+t $\ast$}]{V\+Cdata,  }\item[{uint8\+\_\+t}]{V\+Cdata\+\_\+length,  }\item[{tfph\+\_\+packet\+\_\+t $\ast$}]{tfph,  }\item[{tfdf\+\_\+packet\+\_\+t $\ast$}]{tfdf }\end{DoxyParamCaption})}
+
+Set T\+F\+PH and T\+F\+DF structures to be correctly encoded and packetized 
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to data that will be encoded \\
+\hline
+{\em data\+\_\+length} & Data length \\
+\hline
+{\em V\+Cdata} & Pointer to a VC data that will be encoded \\
+\hline
+{\em V\+Cdata\+\_\+length} & VC Data length \\
+\hline
+{\em tfph} & Pointer to a T\+F\+PH structure to be set \\
+\hline
+{\em tfdf} & Pointer to a T\+F\+DF structure to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 189 of file tf\+\_\+packet.\+c.
+

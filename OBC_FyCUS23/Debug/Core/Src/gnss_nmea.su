@@ -1,0 +1,3 @@
+../Core/Src/gnss_nmea.c:32:22:hex2int	16	static
+../Core/Src/gnss_nmea.c:60:6:gnss_nmea_Time2bytes	32	static
+../Core/Src/gnss_nmea.c:76:19:gnss_nmea_GetData	40	static

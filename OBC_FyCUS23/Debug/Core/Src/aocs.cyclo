@@ -1,0 +1,13 @@
+../Core/Src/aocs.c:64:26:aocs_config_gnss	3
+../Core/Src/aocs.c:112:26:aocs_config_magnetometer	3
+../Core/Src/aocs.c:130:26:aocs_config_imu	3
+../Core/Src/aocs.c:146:26:aocs_config_altimeter	3
+../Core/Src/aocs.c:163:26:aocs_config_temp	2
+../Core/Src/aocs.c:198:26:aocs_get_gnss	1
+../Core/Src/aocs.c:208:26:aocs_get_mag	3
+../Core/Src/aocs.c:227:26:aocs_get_imu	5
+../Core/Src/aocs.c:253:26:aocs_get_accel	3
+../Core/Src/aocs.c:270:26:aocs_get_gyro	3
+../Core/Src/aocs.c:286:26:aocs_get_altimeter	2
+../Core/Src/aocs.c:298:26:aocs_get_temp	6
+../Core/Src/aocs.c:321:26:aocs_get_pubx	9

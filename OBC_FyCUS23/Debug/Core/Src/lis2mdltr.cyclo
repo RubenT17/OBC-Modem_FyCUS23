@@ -1,0 +1,9 @@
+../Core/Src/lis2mdltr.c:30:19:lis2mdl_config	5
+../Core/Src/lis2mdltr.c:64:9:lis2mdl_status	2
+../Core/Src/lis2mdltr.c:81:19:lis2mdl_single_conversion	2
+../Core/Src/lis2mdltr.c:102:19:lis2mdl_readMag	4
+../Core/Src/lis2mdltr.c:128:19:lis2mdl_readTemp	2
+../Core/Src/lis2mdltr.c:148:9:lis2mdl_whoIam	1
+../Core/Src/lis2mdltr.c:163:9:lis2mdl_resetSoftware	2
+../Core/Src/lis2mdltr.c:178:19:lis2mdl_rebootMemory	3
+../Core/Src/lis2mdltr.c:200:9:lis2mdl_selfTest	20

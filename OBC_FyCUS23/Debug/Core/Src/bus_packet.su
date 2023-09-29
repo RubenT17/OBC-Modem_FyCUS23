@@ -1,0 +1,6 @@
+../Core/Src/bus_packet.c:54:19:bus_packet_Decode	56	dynamic
+../Core/Src/bus_packet.c:104:19:bus_packet_Encode	48	dynamic
+../Core/Src/bus_packet.c:144:6:bus_packet_Packetize	16	static
+../Core/Src/bus_packet.c:178:19:bus_packet_EncodePacketize	24	static
+../Core/Src/bus_packet.c:211:17:bus_packet_SyncFrameDetect	16	static
+../Core/Src/bus_packet.c:314:19:bus_packet_CRC16CCSDSConfig	8	static

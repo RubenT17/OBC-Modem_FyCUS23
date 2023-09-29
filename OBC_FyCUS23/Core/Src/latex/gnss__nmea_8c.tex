@@ -1,0 +1,124 @@
+\hypertarget{gnss__nmea_8c}{}\doxysection{gnss\+\_\+nmea.\+c File Reference}
+\label{gnss__nmea_8c}\index{gnss\_nmea.c@{gnss\_nmea.c}}
+
+
+\+: G\+N\+SS N\+M\+EA message decoder.  
+
+
+{\ttfamily \#include \char`\"{}gnss\+\_\+nmea.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gnss__nmea_8c_aa05dfe27da96b888f1f4a69dbd369058}{P\+A\+R\+S\+E\+\_\+\+F\+L\+O\+AT}}(x)~strtof(x+1, \&x)
+\item 
+\#define \mbox{\hyperlink{gnss__nmea_8c_a0c9d44b3c313b7c48fa61a33bf2486ac}{P\+A\+R\+S\+E\+\_\+\+I\+NT}}(x)~strtoul(x+1, \&x, 10)
+\item 
+\#define \mbox{\hyperlink{gnss__nmea_8c_a28d632dc919f267c029870056419545a}{P\+A\+R\+S\+E\+\_\+\+C\+H\+AR}}(x)~($\ast$(x+1)); (($\ast$(x+1)) !=\textquotesingle{},\textquotesingle{}) ? x+=2 \+: x++
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gnss__nmea_8c_a30eb5d0752bad3eb3e79d6429eec5dcb}{gnss\+\_\+nmea\+\_\+\+Time2bytes}} (float time, uint8\+\_\+t $\ast$hours, uint8\+\_\+t $\ast$min, uint8\+\_\+t $\ast$sec)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{gnss__nmea_8c_aaff1cb480a573ddb5c4ef371a87ae860}{gnss\+\_\+nmea\+\_\+\+Get\+Data}} (uint8\+\_\+t $\ast$ring, uint32\+\_\+t ini\+\_\+pos, uint32\+\_\+t end\+\_\+pos, gnss\+\_\+nmea\+\_\+t $\ast$\mbox{\hyperlink{aocs_8c_a6b6e580ae2624f1e62d3baf87eeca1bc}{gnss}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: G\+N\+SS N\+M\+EA message decoder. 
+
+\begin{DoxyAuthor}{Author}
+Rubén Torres Bermúdez \href{mailto:rubentorresbermudez@gmail.com}{\texttt{ rubentorresbermudez@gmail.\+com}}
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Created on\+: 11.\+08.\+2023
+
+Description\+: This library is used to read a N\+M\+EA message from a ring buffer.
+
+Copyright (C) 2023 Rubén Torres Bermúdez 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{gnss__nmea_8c_a28d632dc919f267c029870056419545a}\label{gnss__nmea_8c_a28d632dc919f267c029870056419545a}} 
+\index{gnss\_nmea.c@{gnss\_nmea.c}!PARSE\_CHAR@{PARSE\_CHAR}}
+\index{PARSE\_CHAR@{PARSE\_CHAR}!gnss\_nmea.c@{gnss\_nmea.c}}
+\doxysubsubsection{\texorpdfstring{PARSE\_CHAR}{PARSE\_CHAR}}
+{\footnotesize\ttfamily \#define P\+A\+R\+S\+E\+\_\+\+C\+H\+AR(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~($\ast$(x+1)); (($\ast$(x+1)) !=\textquotesingle{},\textquotesingle{}) ? x+=2 \+: x++}
+
+
+
+Definition at line 24 of file gnss\+\_\+nmea.\+c.
+
+\mbox{\Hypertarget{gnss__nmea_8c_aa05dfe27da96b888f1f4a69dbd369058}\label{gnss__nmea_8c_aa05dfe27da96b888f1f4a69dbd369058}} 
+\index{gnss\_nmea.c@{gnss\_nmea.c}!PARSE\_FLOAT@{PARSE\_FLOAT}}
+\index{PARSE\_FLOAT@{PARSE\_FLOAT}!gnss\_nmea.c@{gnss\_nmea.c}}
+\doxysubsubsection{\texorpdfstring{PARSE\_FLOAT}{PARSE\_FLOAT}}
+{\footnotesize\ttfamily \#define P\+A\+R\+S\+E\+\_\+\+F\+L\+O\+AT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~strtof(x+1, \&x)}
+
+
+
+Definition at line 22 of file gnss\+\_\+nmea.\+c.
+
+\mbox{\Hypertarget{gnss__nmea_8c_a0c9d44b3c313b7c48fa61a33bf2486ac}\label{gnss__nmea_8c_a0c9d44b3c313b7c48fa61a33bf2486ac}} 
+\index{gnss\_nmea.c@{gnss\_nmea.c}!PARSE\_INT@{PARSE\_INT}}
+\index{PARSE\_INT@{PARSE\_INT}!gnss\_nmea.c@{gnss\_nmea.c}}
+\doxysubsubsection{\texorpdfstring{PARSE\_INT}{PARSE\_INT}}
+{\footnotesize\ttfamily \#define P\+A\+R\+S\+E\+\_\+\+I\+NT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~strtoul(x+1, \&x, 10)}
+
+
+
+Definition at line 23 of file gnss\+\_\+nmea.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gnss__nmea_8c_aaff1cb480a573ddb5c4ef371a87ae860}\label{gnss__nmea_8c_aaff1cb480a573ddb5c4ef371a87ae860}} 
+\index{gnss\_nmea.c@{gnss\_nmea.c}!gnss\_nmea\_GetData@{gnss\_nmea\_GetData}}
+\index{gnss\_nmea\_GetData@{gnss\_nmea\_GetData}!gnss\_nmea.c@{gnss\_nmea.c}}
+\doxysubsubsection{\texorpdfstring{gnss\_nmea\_GetData()}{gnss\_nmea\_GetData()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def gnss\+\_\+nmea\+\_\+\+Get\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{ring,  }\item[{uint32\+\_\+t}]{ini\+\_\+pos,  }\item[{uint32\+\_\+t}]{end\+\_\+pos,  }\item[{gnss\+\_\+nmea\+\_\+t $\ast$}]{gnss }\end{DoxyParamCaption})}
+
+Find, check and extract a N\+M\+EA sentence from a ring buffer 
+\begin{DoxyParams}{Parameters}
+{\em ring} & Buffer ring where there is a N\+M\+EA message \\
+\hline
+{\em ini\+\_\+pos} & Initial position of N\+M\+EA sentence \\
+\hline
+{\em end\+\_\+pos} & End position of N\+M\+EA sentence \\
+\hline
+{\em gnss} & Pointer to G\+N\+SS N\+M\+EA message structure for saving sentence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file gnss\+\_\+nmea.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+gnss().
+
+\mbox{\Hypertarget{gnss__nmea_8c_a30eb5d0752bad3eb3e79d6429eec5dcb}\label{gnss__nmea_8c_a30eb5d0752bad3eb3e79d6429eec5dcb}} 
+\index{gnss\_nmea.c@{gnss\_nmea.c}!gnss\_nmea\_Time2bytes@{gnss\_nmea\_Time2bytes}}
+\index{gnss\_nmea\_Time2bytes@{gnss\_nmea\_Time2bytes}!gnss\_nmea.c@{gnss\_nmea.c}}
+\doxysubsubsection{\texorpdfstring{gnss\_nmea\_Time2bytes()}{gnss\_nmea\_Time2bytes()}}
+{\footnotesize\ttfamily void gnss\+\_\+nmea\+\_\+\+Time2bytes (\begin{DoxyParamCaption}\item[{float}]{time,  }\item[{uint8\+\_\+t $\ast$}]{hours,  }\item[{uint8\+\_\+t $\ast$}]{min,  }\item[{uint8\+\_\+t $\ast$}]{sec }\end{DoxyParamCaption})}
+
+Convert time (hhmmss.\+ss) to bytes 
+\begin{DoxyParams}{Parameters}
+{\em time} & Time in format hhmmss.\+ss \\
+\hline
+{\em hours} & Pointer to hours \\
+\hline
+{\em min} & Pointer to minutes \\
+\hline
+{\em sec} & Pointer to seconds \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file gnss\+\_\+nmea.\+c.
+

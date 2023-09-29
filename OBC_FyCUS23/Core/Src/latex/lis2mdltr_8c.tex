@@ -1,0 +1,285 @@
+\hypertarget{lis2mdltr_8c}{}\doxysection{lis2mdltr.\+c File Reference}
+\label{lis2mdltr_8c}\index{lis2mdltr.c@{lis2mdltr.c}}
+
+
+\+: L\+I\+S2\+M\+D\+L\+TR magnetometer library.  
+
+
+{\ttfamily \#include \char`\"{}lis2mdltr.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{lis2mdltr_8c_ad02261cd7ea7cfc0829c5297414d4dc9}{lis2mdl\+\_\+config}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{lis2mdltr_8c_a1c7ccfb23b3be858e1c34613191df974}{lis2mdl\+\_\+status}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{lis2mdltr_8c_a5c31b0a31c7f6e6b3720d31a393c1f34}{lis2mdl\+\_\+single\+\_\+conversion}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{lis2mdltr_8c_a543dc028aa394bddbdff50d0537b535f}{lis2mdl\+\_\+read\+Mag}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout, int16\+\_\+t $\ast$x, int16\+\_\+t $\ast$y, int16\+\_\+t $\ast$z)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{lis2mdltr_8c_a6bbe486abd258b2674333395e50a1c4e}{lis2mdl\+\_\+read\+Temp}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout, float $\ast$temp)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{lis2mdltr_8c_a6dc3088f72a812e373ff0a4d936bec25}{lis2mdl\+\_\+who\+Iam}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{lis2mdltr_8c_abe3dcc7faa53f1a40372688914d26446}{lis2mdl\+\_\+reset\+Software}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{lis2mdltr_8c_aa06a6b9db3476ed23ce27215bca8a038}{lis2mdl\+\_\+reboot\+Memory}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{lis2mdltr_8c_a0d25e642407fd18916622d46dfec6a85}{lis2mdl\+\_\+self\+Test}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint16\+\_\+t Dev\+Address, uint32\+\_\+t Timeout)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: L\+I\+S2\+M\+D\+L\+TR magnetometer library. 
+
+\begin{DoxyAuthor}{Author}
+Rubén Torres Bermúdez \href{mailto:rubentorresbermudez@gmail.com}{\texttt{ rubentorresbermudez@gmail.\+com}}
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Created on\+: 29.\+04.\+2023
+
+Description\+: This library is used to control a L\+I\+S2\+M\+D\+L\+TR magnetometer.
+
+Copyright (C) 2023 Rubén Torres Bermúdez 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lis2mdltr_8c_ad02261cd7ea7cfc0829c5297414d4dc9}\label{lis2mdltr_8c_ad02261cd7ea7cfc0829c5297414d4dc9}} 
+\index{lis2mdltr.c@{lis2mdltr.c}!lis2mdl\_config@{lis2mdl\_config}}
+\index{lis2mdl\_config@{lis2mdl\_config}!lis2mdltr.c@{lis2mdltr.c}}
+\doxysubsubsection{\texorpdfstring{lis2mdl\_config()}{lis2mdl\_config()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def lis2mdl\+\_\+config (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+Common configuration for L\+I\+S2\+M\+DL 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 30 of file lis2mdltr.\+c.
+
+
+
+Referenced by aocs\+\_\+config\+\_\+magnetometer().
+
+\mbox{\Hypertarget{lis2mdltr_8c_a543dc028aa394bddbdff50d0537b535f}\label{lis2mdltr_8c_a543dc028aa394bddbdff50d0537b535f}} 
+\index{lis2mdltr.c@{lis2mdltr.c}!lis2mdl\_readMag@{lis2mdl\_readMag}}
+\index{lis2mdl\_readMag@{lis2mdl\_readMag}!lis2mdltr.c@{lis2mdltr.c}}
+\doxysubsubsection{\texorpdfstring{lis2mdl\_readMag()}{lis2mdl\_readMag()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def lis2mdl\+\_\+read\+Mag (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout,  }\item[{int16\+\_\+t $\ast$}]{x,  }\item[{int16\+\_\+t $\ast$}]{y,  }\item[{int16\+\_\+t $\ast$}]{z }\end{DoxyParamCaption})}
+
+Read magnetometer sensor 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+{\em x} & Pointer to x-\/axis value \\
+\hline
+{\em y} & Pointer to y-\/axis value \\
+\hline
+{\em z} & Pointer to z-\/axis value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 102 of file lis2mdltr.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+mag().
+
+\mbox{\Hypertarget{lis2mdltr_8c_a6bbe486abd258b2674333395e50a1c4e}\label{lis2mdltr_8c_a6bbe486abd258b2674333395e50a1c4e}} 
+\index{lis2mdltr.c@{lis2mdltr.c}!lis2mdl\_readTemp@{lis2mdl\_readTemp}}
+\index{lis2mdl\_readTemp@{lis2mdl\_readTemp}!lis2mdltr.c@{lis2mdltr.c}}
+\doxysubsubsection{\texorpdfstring{lis2mdl\_readTemp()}{lis2mdl\_readTemp()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def lis2mdl\+\_\+read\+Temp (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout,  }\item[{float $\ast$}]{temp }\end{DoxyParamCaption})}
+
+Read temperature sensor 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+{\em temp} & Pointer to temperature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 128 of file lis2mdltr.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+mag().
+
+\mbox{\Hypertarget{lis2mdltr_8c_aa06a6b9db3476ed23ce27215bca8a038}\label{lis2mdltr_8c_aa06a6b9db3476ed23ce27215bca8a038}} 
+\index{lis2mdltr.c@{lis2mdltr.c}!lis2mdl\_rebootMemory@{lis2mdl\_rebootMemory}}
+\index{lis2mdl\_rebootMemory@{lis2mdl\_rebootMemory}!lis2mdltr.c@{lis2mdltr.c}}
+\doxysubsubsection{\texorpdfstring{lis2mdl\_rebootMemory()}{lis2mdl\_rebootMemory()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def lis2mdl\+\_\+reboot\+Memory (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+Reboot memory contents 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 178 of file lis2mdltr.\+c.
+
+\mbox{\Hypertarget{lis2mdltr_8c_abe3dcc7faa53f1a40372688914d26446}\label{lis2mdltr_8c_abe3dcc7faa53f1a40372688914d26446}} 
+\index{lis2mdltr.c@{lis2mdltr.c}!lis2mdl\_resetSoftware@{lis2mdl\_resetSoftware}}
+\index{lis2mdl\_resetSoftware@{lis2mdl\_resetSoftware}!lis2mdltr.c@{lis2mdltr.c}}
+\doxysubsubsection{\texorpdfstring{lis2mdl\_resetSoftware()}{lis2mdl\_resetSoftware()}}
+{\footnotesize\ttfamily uint8\+\_\+t lis2mdl\+\_\+reset\+Software (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+Software reset 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 163 of file lis2mdltr.\+c.
+
+
+
+Referenced by lis2mdl\+\_\+self\+Test().
+
+\mbox{\Hypertarget{lis2mdltr_8c_a0d25e642407fd18916622d46dfec6a85}\label{lis2mdltr_8c_a0d25e642407fd18916622d46dfec6a85}} 
+\index{lis2mdltr.c@{lis2mdltr.c}!lis2mdl\_selfTest@{lis2mdl\_selfTest}}
+\index{lis2mdl\_selfTest@{lis2mdl\_selfTest}!lis2mdltr.c@{lis2mdltr.c}}
+\doxysubsubsection{\texorpdfstring{lis2mdl\_selfTest()}{lis2mdl\_selfTest()}}
+{\footnotesize\ttfamily uint8\+\_\+t lis2mdl\+\_\+self\+Test (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+Self-\/test utility (NO T\+E\+S\+T\+ED F\+U\+N\+C\+T\+I\+ON) 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 200 of file lis2mdltr.\+c.
+
+
+
+References lis2mdl\+\_\+reset\+Software(), and lis2mdl\+\_\+status().
+
+\mbox{\Hypertarget{lis2mdltr_8c_a5c31b0a31c7f6e6b3720d31a393c1f34}\label{lis2mdltr_8c_a5c31b0a31c7f6e6b3720d31a393c1f34}} 
+\index{lis2mdltr.c@{lis2mdltr.c}!lis2mdl\_single\_conversion@{lis2mdl\_single\_conversion}}
+\index{lis2mdl\_single\_conversion@{lis2mdl\_single\_conversion}!lis2mdltr.c@{lis2mdltr.c}}
+\doxysubsubsection{\texorpdfstring{lis2mdl\_single\_conversion()}{lis2mdl\_single\_conversion()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def lis2mdl\+\_\+single\+\_\+conversion (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+Perform a single conversion 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file lis2mdltr.\+c.
+
+\mbox{\Hypertarget{lis2mdltr_8c_a1c7ccfb23b3be858e1c34613191df974}\label{lis2mdltr_8c_a1c7ccfb23b3be858e1c34613191df974}} 
+\index{lis2mdltr.c@{lis2mdltr.c}!lis2mdl\_status@{lis2mdl\_status}}
+\index{lis2mdl\_status@{lis2mdl\_status}!lis2mdltr.c@{lis2mdltr.c}}
+\doxysubsubsection{\texorpdfstring{lis2mdl\_status()}{lis2mdl\_status()}}
+{\footnotesize\ttfamily uint8\+\_\+t lis2mdl\+\_\+status (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+Read status register 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file lis2mdltr.\+c.
+
+
+
+Referenced by aocs\+\_\+get\+\_\+mag(), and lis2mdl\+\_\+self\+Test().
+
+\mbox{\Hypertarget{lis2mdltr_8c_a6dc3088f72a812e373ff0a4d936bec25}\label{lis2mdltr_8c_a6dc3088f72a812e373ff0a4d936bec25}} 
+\index{lis2mdltr.c@{lis2mdltr.c}!lis2mdl\_whoIam@{lis2mdl\_whoIam}}
+\index{lis2mdl\_whoIam@{lis2mdl\_whoIam}!lis2mdltr.c@{lis2mdltr.c}}
+\doxysubsubsection{\texorpdfstring{lis2mdl\_whoIam()}{lis2mdl\_whoIam()}}
+{\footnotesize\ttfamily uint8\+\_\+t lis2mdl\+\_\+who\+Iam (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint16\+\_\+t}]{Dev\+Address,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+Read W\+HO I AM register 
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & Pointer to a I2\+C\+\_\+\+Handle\+Type\+Def structure \\
+\hline
+{\em Dev\+Address} & Device address \\
+\hline
+{\em Timeout} & Timeout duration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Device response 
+\end{DoxyReturn}
+
+
+Definition at line 148 of file lis2mdltr.\+c.
+
+
+
+References hi2c1.
+
+
+
+Referenced by aocs\+\_\+config\+\_\+magnetometer().
+

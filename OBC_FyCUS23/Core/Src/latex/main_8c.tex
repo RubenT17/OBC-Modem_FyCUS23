@@ -1,0 +1,592 @@
+\hypertarget{main_8c}{}\doxysection{main.\+c File Reference}
+\label{main_8c}\index{main.c@{main.c}}
+
+
+\+: Main program body  
+
+
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}intelli.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}aocs.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_af0a2bb67fa279853b3b2666c8e556c88}{D\+E\+B\+U\+G\+\_\+\+L\+ED}}~1
+\item 
+\#define \mbox{\hyperlink{main_8c_a87320bad08c3821a9e12540012a4c426}{L\+O\+W\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+R\+E\+A\+D\+\_\+\+F\+A\+ST}}~1
+\item 
+\#define \mbox{\hyperlink{main_8c_a33cd6d1bbfdc2cafb8a16d15eb396402}{G\+N\+S\+S\+\_\+\+R\+E\+A\+D\+\_\+\+P\+U\+BX}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55a}{isr\+\_\+flag\+\_\+t}} \{ \newline
+\mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aacce4c4e3d28544716cd82f9400ae6854}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+N\+O\+NE}} = 0, 
+\mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aa10622bdb33f6345a6ccd529bb6c6a808}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+G\+N\+SS}} = 0b1, 
+\mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aa24c33fe10d2e484515ac6987dc345cd4}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+I\+M\+U\+\_\+\+A\+C\+E\+LL}} = 0b10, 
+\mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aa4a1b45d9c28710bea8e08a6a67177640}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+I\+M\+U\+\_\+\+G\+Y\+RO}} = 0b100, 
+\newline
+\mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aa156d551c1cf785038104cd7f591daafb}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+M\+AG}} = 0b1000, 
+\mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aa9084e8c09590e36d9009d6808051ddbf}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+D\+E\+M\+\_\+\+B\+US}} = 0b10000, 
+\mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aa16f89df32a3b4ebae448d9e0175af91e}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+D\+E\+M\+\_\+\+G\+P\+IO}} = 0b100000, 
+\mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aad2ac88e9912c4e2ea97d1d4ab976270a}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+E\+P\+S\+\_\+\+B\+US}} = 0b1000000, 
+\newline
+\mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aa6bbbaae7ebc6d86372cb9519dabc52c2}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+E\+P\+S\+\_\+\+G\+P\+IO}} = 0b10000000, 
+\mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aab4666e2066b950c9768c021082eb3645}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+T\+IM}} = 0b100000000, 
+\mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aa479b529b37302dd379c80266ccb90866}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y\+\_\+\+T\+IM}} = 0b1000000000, 
+\mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aa820de635377b92413cd7867a8884a948}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+P\+U\+B\+X\+\_\+\+M\+SG}} = 0b10000000000
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a003e78d918ed5501c09551174b088f4e}{delay\+Micro}} (uint32\+\_\+t us\+\_\+delay)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}{H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Callback}} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\item 
+void \mbox{\hyperlink{main_8c_a1f7478d689916e5888f62f97cf4acef3}{H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Half\+Cplt\+Callback}} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\item 
+void \mbox{\hyperlink{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}{H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback}} (uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\item 
+void \mbox{\hyperlink{main_8c_ae494a9643f29b87d6d81e5264e60e57b}{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Rx\+Cplt\+Callback}} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart)
+\item 
+void \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+C\+R\+C\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_ae3358c54a01c6487322df1275618d6b1}{hcrc}}
+\item 
+I2\+C\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}
+\item 
+I\+W\+D\+G\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a80f055e38f52ca3c57e183fc685ea477}{hiwdg}}
+\item 
+U\+A\+R\+T\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a5c3f9dccaa7cebcc70e1657af9e5e5dc}{hlpuart1}}
+\item 
+U\+A\+R\+T\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a2cf715bef37f7e8ef385a30974a5f0d5}{huart1}}
+\item 
+U\+A\+R\+T\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_ab7c63c1b0f65db92b6a4ea19edf957e1}{huart3}}
+\item 
+D\+M\+A\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a60a3759a612a6ace0df43932c22458ed}{hdma\+\_\+lpuart\+\_\+tx}}
+\item 
+D\+M\+A\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a5af94ab36bfe698db3e6beea96d10a90}{hdma\+\_\+usart1\+\_\+tx}}
+\item 
+D\+M\+A\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a418ff7f6b595dcf41b10de1083e62340}{hdma\+\_\+usart3\+\_\+rx}}
+\item 
+R\+T\+C\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_aa0c7fca836406ade332e1e3f1039d8ab}{hrtc}}
+\item 
+T\+I\+M\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a1564492831a79fa18466467c3420c3c3}{htim6}}
+\item 
+T\+I\+M\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_abb71bf3ee68e2a051fbeec6c3ab3012d}{htim7}}
+\item 
+T\+I\+M\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_af0bea8d8759a0d7e0e296edc9f5d6936}{htim16}}
+\item 
+volatile \mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55a}{isr\+\_\+flag\+\_\+t}} \mbox{\hyperlink{main_8c_a455b9f73ad8270ad252d47f78214bab7}{isr\+\_\+flag}} = \mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aacce4c4e3d28544716cd82f9400ae6854}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+N\+O\+NE}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_ab62ab98f1d8a3cfc4146435e809bbed6}{eps\+\_\+buffer\+\_\+rx}} \mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+S\+\_\+\+S\+I\+ZE\mbox{]} = \{0\}
+\item 
+bus\+\_\+packet\+\_\+t \mbox{\hyperlink{main_8c_a082aad64a5b6cd480e998d4eff67d9aa}{eps\+\_\+packet}} = \{0\}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_afc6fd792d6db891a3d7d53f0475d136c}{modem\+\_\+buffer\+\_\+rx}} \mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+S\+\_\+\+S\+I\+ZE\mbox{]} = \{0\}
+\item 
+bus\+\_\+packet\+\_\+t \mbox{\hyperlink{main_8c_a4a66dd6a00315cb287f0ec0edbcb9bf9}{modem\+\_\+packet}} = \{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Main program body 
+
+\begin{DoxyAuthor}{Author}
+Rubén Torres Bermúdez \href{mailto:rubentorresbermudez@gmail.com}{\texttt{ rubentorresbermudez@gmail.\+com}}
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Description\+: This source file is used to control O\+B\+C+\+A\+O\+CS subsystem in Fy\+C\+US 2023 project.
+
+Copyright (C) 2023 Rubén Torres Bermúdez
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2023 S\+T\+Microelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_af0a2bb67fa279853b3b2666c8e556c88}\label{main_8c_af0a2bb67fa279853b3b2666c8e556c88}} 
+\index{main.c@{main.c}!DEBUG\_LED@{DEBUG\_LED}}
+\index{DEBUG\_LED@{DEBUG\_LED}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_LED}{DEBUG\_LED}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+\_\+\+L\+ED~1}
+
+
+
+Definition at line 71 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a33cd6d1bbfdc2cafb8a16d15eb396402}\label{main_8c_a33cd6d1bbfdc2cafb8a16d15eb396402}} 
+\index{main.c@{main.c}!GNSS\_READ\_PUBX@{GNSS\_READ\_PUBX}}
+\index{GNSS\_READ\_PUBX@{GNSS\_READ\_PUBX}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{GNSS\_READ\_PUBX}{GNSS\_READ\_PUBX}}
+{\footnotesize\ttfamily \#define G\+N\+S\+S\+\_\+\+R\+E\+A\+D\+\_\+\+P\+U\+BX~0}
+
+
+
+Definition at line 73 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a87320bad08c3821a9e12540012a4c426}\label{main_8c_a87320bad08c3821a9e12540012a4c426}} 
+\index{main.c@{main.c}!LOW\_SENSOR\_READ\_FAST@{LOW\_SENSOR\_READ\_FAST}}
+\index{LOW\_SENSOR\_READ\_FAST@{LOW\_SENSOR\_READ\_FAST}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{LOW\_SENSOR\_READ\_FAST}{LOW\_SENSOR\_READ\_FAST}}
+{\footnotesize\ttfamily \#define L\+O\+W\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+R\+E\+A\+D\+\_\+\+F\+A\+ST~1}
+
+
+
+Definition at line 72 of file main.\+c.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{main_8c_a752ac07b355d6c9fbe149759190ff55a}\label{main_8c_a752ac07b355d6c9fbe149759190ff55a}} 
+\index{main.c@{main.c}!isr\_flag\_t@{isr\_flag\_t}}
+\index{isr\_flag\_t@{isr\_flag\_t}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{isr\_flag\_t}{isr\_flag\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55a}{isr\+\_\+flag\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISR\_FLAG\_NONE@{ISR\_FLAG\_NONE}!main.c@{main.c}}\index{main.c@{main.c}!ISR\_FLAG\_NONE@{ISR\_FLAG\_NONE}}}\mbox{\Hypertarget{main_8c_a752ac07b355d6c9fbe149759190ff55aacce4c4e3d28544716cd82f9400ae6854}\label{main_8c_a752ac07b355d6c9fbe149759190ff55aacce4c4e3d28544716cd82f9400ae6854}} 
+I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+N\+O\+NE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISR\_FLAG\_GNSS@{ISR\_FLAG\_GNSS}!main.c@{main.c}}\index{main.c@{main.c}!ISR\_FLAG\_GNSS@{ISR\_FLAG\_GNSS}}}\mbox{\Hypertarget{main_8c_a752ac07b355d6c9fbe149759190ff55aa10622bdb33f6345a6ccd529bb6c6a808}\label{main_8c_a752ac07b355d6c9fbe149759190ff55aa10622bdb33f6345a6ccd529bb6c6a808}} 
+I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+G\+N\+SS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISR\_FLAG\_IMU\_ACELL@{ISR\_FLAG\_IMU\_ACELL}!main.c@{main.c}}\index{main.c@{main.c}!ISR\_FLAG\_IMU\_ACELL@{ISR\_FLAG\_IMU\_ACELL}}}\mbox{\Hypertarget{main_8c_a752ac07b355d6c9fbe149759190ff55aa24c33fe10d2e484515ac6987dc345cd4}\label{main_8c_a752ac07b355d6c9fbe149759190ff55aa24c33fe10d2e484515ac6987dc345cd4}} 
+I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+I\+M\+U\+\_\+\+A\+C\+E\+LL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISR\_FLAG\_IMU\_GYRO@{ISR\_FLAG\_IMU\_GYRO}!main.c@{main.c}}\index{main.c@{main.c}!ISR\_FLAG\_IMU\_GYRO@{ISR\_FLAG\_IMU\_GYRO}}}\mbox{\Hypertarget{main_8c_a752ac07b355d6c9fbe149759190ff55aa4a1b45d9c28710bea8e08a6a67177640}\label{main_8c_a752ac07b355d6c9fbe149759190ff55aa4a1b45d9c28710bea8e08a6a67177640}} 
+I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+I\+M\+U\+\_\+\+G\+Y\+RO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISR\_FLAG\_MAG@{ISR\_FLAG\_MAG}!main.c@{main.c}}\index{main.c@{main.c}!ISR\_FLAG\_MAG@{ISR\_FLAG\_MAG}}}\mbox{\Hypertarget{main_8c_a752ac07b355d6c9fbe149759190ff55aa156d551c1cf785038104cd7f591daafb}\label{main_8c_a752ac07b355d6c9fbe149759190ff55aa156d551c1cf785038104cd7f591daafb}} 
+I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+M\+AG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISR\_FLAG\_MODEM\_BUS@{ISR\_FLAG\_MODEM\_BUS}!main.c@{main.c}}\index{main.c@{main.c}!ISR\_FLAG\_MODEM\_BUS@{ISR\_FLAG\_MODEM\_BUS}}}\mbox{\Hypertarget{main_8c_a752ac07b355d6c9fbe149759190ff55aa9084e8c09590e36d9009d6808051ddbf}\label{main_8c_a752ac07b355d6c9fbe149759190ff55aa9084e8c09590e36d9009d6808051ddbf}} 
+I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+D\+E\+M\+\_\+\+B\+US&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISR\_FLAG\_MODEM\_GPIO@{ISR\_FLAG\_MODEM\_GPIO}!main.c@{main.c}}\index{main.c@{main.c}!ISR\_FLAG\_MODEM\_GPIO@{ISR\_FLAG\_MODEM\_GPIO}}}\mbox{\Hypertarget{main_8c_a752ac07b355d6c9fbe149759190ff55aa16f89df32a3b4ebae448d9e0175af91e}\label{main_8c_a752ac07b355d6c9fbe149759190ff55aa16f89df32a3b4ebae448d9e0175af91e}} 
+I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+D\+E\+M\+\_\+\+G\+P\+IO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISR\_FLAG\_EPS\_BUS@{ISR\_FLAG\_EPS\_BUS}!main.c@{main.c}}\index{main.c@{main.c}!ISR\_FLAG\_EPS\_BUS@{ISR\_FLAG\_EPS\_BUS}}}\mbox{\Hypertarget{main_8c_a752ac07b355d6c9fbe149759190ff55aad2ac88e9912c4e2ea97d1d4ab976270a}\label{main_8c_a752ac07b355d6c9fbe149759190ff55aad2ac88e9912c4e2ea97d1d4ab976270a}} 
+I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+E\+P\+S\+\_\+\+B\+US&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISR\_FLAG\_EPS\_GPIO@{ISR\_FLAG\_EPS\_GPIO}!main.c@{main.c}}\index{main.c@{main.c}!ISR\_FLAG\_EPS\_GPIO@{ISR\_FLAG\_EPS\_GPIO}}}\mbox{\Hypertarget{main_8c_a752ac07b355d6c9fbe149759190ff55aa6bbbaae7ebc6d86372cb9519dabc52c2}\label{main_8c_a752ac07b355d6c9fbe149759190ff55aa6bbbaae7ebc6d86372cb9519dabc52c2}} 
+I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+E\+P\+S\+\_\+\+G\+P\+IO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISR\_FLAG\_PRIMARY\_TIM@{ISR\_FLAG\_PRIMARY\_TIM}!main.c@{main.c}}\index{main.c@{main.c}!ISR\_FLAG\_PRIMARY\_TIM@{ISR\_FLAG\_PRIMARY\_TIM}}}\mbox{\Hypertarget{main_8c_a752ac07b355d6c9fbe149759190ff55aab4666e2066b950c9768c021082eb3645}\label{main_8c_a752ac07b355d6c9fbe149759190ff55aab4666e2066b950c9768c021082eb3645}} 
+I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+T\+IM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISR\_FLAG\_SECONDARY\_TIM@{ISR\_FLAG\_SECONDARY\_TIM}!main.c@{main.c}}\index{main.c@{main.c}!ISR\_FLAG\_SECONDARY\_TIM@{ISR\_FLAG\_SECONDARY\_TIM}}}\mbox{\Hypertarget{main_8c_a752ac07b355d6c9fbe149759190ff55aa479b529b37302dd379c80266ccb90866}\label{main_8c_a752ac07b355d6c9fbe149759190ff55aa479b529b37302dd379c80266ccb90866}} 
+I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y\+\_\+\+T\+IM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISR\_FLAG\_PUBX\_MSG@{ISR\_FLAG\_PUBX\_MSG}!main.c@{main.c}}\index{main.c@{main.c}!ISR\_FLAG\_PUBX\_MSG@{ISR\_FLAG\_PUBX\_MSG}}}\mbox{\Hypertarget{main_8c_a752ac07b355d6c9fbe149759190ff55aa820de635377b92413cd7867a8884a948}\label{main_8c_a752ac07b355d6c9fbe149759190ff55aa820de635377b92413cd7867a8884a948}} 
+I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+P\+U\+B\+X\+\_\+\+M\+SG&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 50 of file main.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a003e78d918ed5501c09551174b088f4e}\label{main_8c_a003e78d918ed5501c09551174b088f4e}} 
+\index{main.c@{main.c}!delayMicro@{delayMicro}}
+\index{delayMicro@{delayMicro}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{delayMicro()}{delayMicro()}}
+{\footnotesize\ttfamily void delay\+Micro (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{us\+\_\+delay }\end{DoxyParamCaption})}
+
+
+
+Definition at line 142 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\label{main_8c_a1730ffe1e560465665eb47d9264826f9}} 
+\index{main.c@{main.c}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 1190 of file main.\+c.
+
+
+
+Referenced by H\+A\+L\+\_\+\+I2\+C\+\_\+\+Msp\+Init(), H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+Init(), H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+Init(), and System\+Clock\+\_\+\+Config().
+
+\mbox{\Hypertarget{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}\label{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}} 
+\index{main.c@{main.c}!HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}}
+\index{HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_GPIO\_EXTI\_Callback()}{HAL\_GPIO\_EXTI\_Callback()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Definition at line 972 of file main.\+c.
+
+
+
+References isr\+\_\+flag, I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+E\+P\+S\+\_\+\+G\+P\+IO, I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+G\+N\+SS, I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+I\+M\+U\+\_\+\+A\+C\+E\+LL, I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+I\+M\+U\+\_\+\+G\+Y\+RO, I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+M\+AG, and I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+D\+E\+M\+\_\+\+G\+P\+IO.
+
+\mbox{\Hypertarget{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}\label{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}} 
+\index{main.c@{main.c}!HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}}
+\index{HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_PeriodElapsedCallback()}{HAL\_TIM\_PeriodElapsedCallback()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Callback (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+Definition at line 956 of file main.\+c.
+
+
+
+References isr\+\_\+flag, I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+P\+R\+I\+M\+A\+R\+Y\+\_\+\+T\+IM, and I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y\+\_\+\+T\+IM.
+
+\mbox{\Hypertarget{main_8c_a1f7478d689916e5888f62f97cf4acef3}\label{main_8c_a1f7478d689916e5888f62f97cf4acef3}} 
+\index{main.c@{main.c}!HAL\_TIM\_PeriodElapsedHalfCpltCallback@{HAL\_TIM\_PeriodElapsedHalfCpltCallback}}
+\index{HAL\_TIM\_PeriodElapsedHalfCpltCallback@{HAL\_TIM\_PeriodElapsedHalfCpltCallback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_PeriodElapsedHalfCpltCallback()}{HAL\_TIM\_PeriodElapsedHalfCpltCallback()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Half\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+Definition at line 965 of file main.\+c.
+
+
+
+References hiwdg.
+
+\mbox{\Hypertarget{main_8c_ae494a9643f29b87d6d81e5264e60e57b}\label{main_8c_ae494a9643f29b87d6d81e5264e60e57b}} 
+\index{main.c@{main.c}!HAL\_UART\_RxCpltCallback@{HAL\_UART\_RxCpltCallback}}
+\index{HAL\_UART\_RxCpltCallback@{HAL\_UART\_RxCpltCallback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_UART\_RxCpltCallback()}{HAL\_UART\_RxCpltCallback()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Rx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
+
+
+
+Definition at line 992 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The application entry point. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 154 of file main.\+c.
+
+
+
+References System\+Clock\+\_\+\+Config().
+
+\mbox{\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\label{main_8c_a70af21c671abfcc773614a9a4f63d920}} 
+\index{main.c@{main.c}!SystemClock\_Config@{SystemClock\_Config}}
+\index{SystemClock\_Config@{SystemClock\_Config}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SystemClock\_Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Configure the main internal regulator output voltage
+
+Initializes the R\+CC Oscillators according to the specified parameters in the R\+C\+C\+\_\+\+Osc\+Init\+Type\+Def structure.
+
+Initializes the C\+PU, A\+HB and A\+PB buses clocks
+
+Definition at line 441 of file main.\+c.
+
+
+
+References Error\+\_\+\+Handler().
+
+
+
+Referenced by main().
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_ab62ab98f1d8a3cfc4146435e809bbed6}\label{main_8c_ab62ab98f1d8a3cfc4146435e809bbed6}} 
+\index{main.c@{main.c}!eps\_buffer\_rx@{eps\_buffer\_rx}}
+\index{eps\_buffer\_rx@{eps\_buffer\_rx}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{eps\_buffer\_rx}{eps\_buffer\_rx}}
+{\footnotesize\ttfamily uint8\+\_\+t eps\+\_\+buffer\+\_\+rx\mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+S\+\_\+\+S\+I\+ZE\mbox{]} = \{0\}}
+
+
+
+Definition at line 108 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a082aad64a5b6cd480e998d4eff67d9aa}\label{main_8c_a082aad64a5b6cd480e998d4eff67d9aa}} 
+\index{main.c@{main.c}!eps\_packet@{eps\_packet}}
+\index{eps\_packet@{eps\_packet}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{eps\_packet}{eps\_packet}}
+{\footnotesize\ttfamily bus\+\_\+packet\+\_\+t eps\+\_\+packet = \{0\}}
+
+
+
+Definition at line 109 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_ae3358c54a01c6487322df1275618d6b1}\label{main_8c_ae3358c54a01c6487322df1275618d6b1}} 
+\index{main.c@{main.c}!hcrc@{hcrc}}
+\index{hcrc@{hcrc}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hcrc}{hcrc}}
+{\footnotesize\ttfamily C\+R\+C\+\_\+\+Handle\+Type\+Def hcrc}
+
+
+
+Definition at line 81 of file main.\+c.
+
+
+
+Referenced by bus\+\_\+packet\+\_\+\+Decode(), bus\+\_\+packet\+\_\+\+Encode(), bus\+\_\+packet\+\_\+\+Encode\+Packetize(), H\+A\+L\+\_\+\+C\+R\+C\+\_\+\+Msp\+De\+Init(), H\+A\+L\+\_\+\+C\+R\+C\+\_\+\+Msp\+Init(), tf\+\_\+packet\+\_\+\+Decode(), and tf\+\_\+packet\+\_\+\+Packetize().
+
+\mbox{\Hypertarget{main_8c_a60a3759a612a6ace0df43932c22458ed}\label{main_8c_a60a3759a612a6ace0df43932c22458ed}} 
+\index{main.c@{main.c}!hdma\_lpuart\_tx@{hdma\_lpuart\_tx}}
+\index{hdma\_lpuart\_tx@{hdma\_lpuart\_tx}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hdma\_lpuart\_tx}{hdma\_lpuart\_tx}}
+{\footnotesize\ttfamily D\+M\+A\+\_\+\+Handle\+Type\+Def hdma\+\_\+lpuart\+\_\+tx}
+
+
+
+Definition at line 90 of file main.\+c.
+
+
+
+Referenced by D\+M\+A2\+\_\+\+Channel6\+\_\+\+I\+R\+Q\+Handler(), and H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+Init().
+
+\mbox{\Hypertarget{main_8c_a5af94ab36bfe698db3e6beea96d10a90}\label{main_8c_a5af94ab36bfe698db3e6beea96d10a90}} 
+\index{main.c@{main.c}!hdma\_usart1\_tx@{hdma\_usart1\_tx}}
+\index{hdma\_usart1\_tx@{hdma\_usart1\_tx}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hdma\_usart1\_tx}{hdma\_usart1\_tx}}
+{\footnotesize\ttfamily D\+M\+A\+\_\+\+Handle\+Type\+Def hdma\+\_\+usart1\+\_\+tx}
+
+
+
+Definition at line 91 of file main.\+c.
+
+
+
+Referenced by D\+M\+A1\+\_\+\+Channel4\+\_\+\+I\+R\+Q\+Handler(), and H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+Init().
+
+\mbox{\Hypertarget{main_8c_a418ff7f6b595dcf41b10de1083e62340}\label{main_8c_a418ff7f6b595dcf41b10de1083e62340}} 
+\index{main.c@{main.c}!hdma\_usart3\_rx@{hdma\_usart3\_rx}}
+\index{hdma\_usart3\_rx@{hdma\_usart3\_rx}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hdma\_usart3\_rx}{hdma\_usart3\_rx}}
+{\footnotesize\ttfamily D\+M\+A\+\_\+\+Handle\+Type\+Def hdma\+\_\+usart3\+\_\+rx}
+
+
+
+Definition at line 92 of file main.\+c.
+
+
+
+Referenced by D\+M\+A1\+\_\+\+Channel3\+\_\+\+I\+R\+Q\+Handler(), and H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+Init().
+
+\mbox{\Hypertarget{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}\label{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}} 
+\index{main.c@{main.c}!hi2c1@{hi2c1}}
+\index{hi2c1@{hi2c1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hi2c1}{hi2c1}}
+{\footnotesize\ttfamily I2\+C\+\_\+\+Handle\+Type\+Def hi2c1}
+
+
+
+Definition at line 83 of file main.\+c.
+
+
+
+Referenced by aocs\+\_\+config\+\_\+imu(), aocs\+\_\+config\+\_\+magnetometer(), aocs\+\_\+get\+\_\+accel(), aocs\+\_\+get\+\_\+gyro(), aocs\+\_\+get\+\_\+imu(), aocs\+\_\+get\+\_\+mag(), lis2mdl\+\_\+who\+Iam(), lsm6dso\+\_\+who\+Iam(), and ms5607\+\_\+reset().
+
+\mbox{\Hypertarget{main_8c_a80f055e38f52ca3c57e183fc685ea477}\label{main_8c_a80f055e38f52ca3c57e183fc685ea477}} 
+\index{main.c@{main.c}!hiwdg@{hiwdg}}
+\index{hiwdg@{hiwdg}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hiwdg}{hiwdg}}
+{\footnotesize\ttfamily I\+W\+D\+G\+\_\+\+Handle\+Type\+Def hiwdg}
+
+
+
+Definition at line 85 of file main.\+c.
+
+
+
+Referenced by H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Half\+Cplt\+Callback().
+
+\mbox{\Hypertarget{main_8c_a5c3f9dccaa7cebcc70e1657af9e5e5dc}\label{main_8c_a5c3f9dccaa7cebcc70e1657af9e5e5dc}} 
+\index{main.c@{main.c}!hlpuart1@{hlpuart1}}
+\index{hlpuart1@{hlpuart1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hlpuart1}{hlpuart1}}
+{\footnotesize\ttfamily U\+A\+R\+T\+\_\+\+Handle\+Type\+Def hlpuart1}
+
+
+
+Definition at line 87 of file main.\+c.
+
+
+
+Referenced by L\+P\+U\+A\+R\+T1\+\_\+\+I\+R\+Q\+Handler().
+
+\mbox{\Hypertarget{main_8c_aa0c7fca836406ade332e1e3f1039d8ab}\label{main_8c_aa0c7fca836406ade332e1e3f1039d8ab}} 
+\index{main.c@{main.c}!hrtc@{hrtc}}
+\index{hrtc@{hrtc}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hrtc}{hrtc}}
+{\footnotesize\ttfamily R\+T\+C\+\_\+\+Handle\+Type\+Def hrtc}
+
+
+
+Definition at line 94 of file main.\+c.
+
+
+
+Referenced by H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+De\+Init(), and H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+Init().
+
+\mbox{\Hypertarget{main_8c_af0bea8d8759a0d7e0e296edc9f5d6936}\label{main_8c_af0bea8d8759a0d7e0e296edc9f5d6936}} 
+\index{main.c@{main.c}!htim16@{htim16}}
+\index{htim16@{htim16}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{htim16}{htim16}}
+{\footnotesize\ttfamily T\+I\+M\+\_\+\+Handle\+Type\+Def htim16}
+
+
+
+Definition at line 98 of file main.\+c.
+
+
+
+Referenced by T\+I\+M1\+\_\+\+U\+P\+\_\+\+T\+I\+M16\+\_\+\+I\+R\+Q\+Handler().
+
+\mbox{\Hypertarget{main_8c_a1564492831a79fa18466467c3420c3c3}\label{main_8c_a1564492831a79fa18466467c3420c3c3}} 
+\index{main.c@{main.c}!htim6@{htim6}}
+\index{htim6@{htim6}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{htim6}{htim6}}
+{\footnotesize\ttfamily T\+I\+M\+\_\+\+Handle\+Type\+Def htim6}
+
+
+
+Definition at line 96 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_abb71bf3ee68e2a051fbeec6c3ab3012d}\label{main_8c_abb71bf3ee68e2a051fbeec6c3ab3012d}} 
+\index{main.c@{main.c}!htim7@{htim7}}
+\index{htim7@{htim7}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{htim7}{htim7}}
+{\footnotesize\ttfamily T\+I\+M\+\_\+\+Handle\+Type\+Def htim7}
+
+
+
+Definition at line 97 of file main.\+c.
+
+
+
+Referenced by T\+I\+M7\+\_\+\+I\+R\+Q\+Handler().
+
+\mbox{\Hypertarget{main_8c_a2cf715bef37f7e8ef385a30974a5f0d5}\label{main_8c_a2cf715bef37f7e8ef385a30974a5f0d5}} 
+\index{main.c@{main.c}!huart1@{huart1}}
+\index{huart1@{huart1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{huart1}{huart1}}
+{\footnotesize\ttfamily U\+A\+R\+T\+\_\+\+Handle\+Type\+Def huart1}
+
+
+
+Definition at line 88 of file main.\+c.
+
+
+
+Referenced by U\+S\+A\+R\+T1\+\_\+\+I\+R\+Q\+Handler().
+
+\mbox{\Hypertarget{main_8c_ab7c63c1b0f65db92b6a4ea19edf957e1}\label{main_8c_ab7c63c1b0f65db92b6a4ea19edf957e1}} 
+\index{main.c@{main.c}!huart3@{huart3}}
+\index{huart3@{huart3}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{huart3}{huart3}}
+{\footnotesize\ttfamily U\+A\+R\+T\+\_\+\+Handle\+Type\+Def huart3}
+
+
+
+Definition at line 89 of file main.\+c.
+
+
+
+Referenced by U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler().
+
+\mbox{\Hypertarget{main_8c_a455b9f73ad8270ad252d47f78214bab7}\label{main_8c_a455b9f73ad8270ad252d47f78214bab7}} 
+\index{main.c@{main.c}!isr\_flag@{isr\_flag}}
+\index{isr\_flag@{isr\_flag}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{isr\_flag}{isr\_flag}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55a}{isr\+\_\+flag\+\_\+t}} isr\+\_\+flag = \mbox{\hyperlink{main_8c_a752ac07b355d6c9fbe149759190ff55aacce4c4e3d28544716cd82f9400ae6854}{I\+S\+R\+\_\+\+F\+L\+A\+G\+\_\+\+N\+O\+NE}}}
+
+
+
+Definition at line 103 of file main.\+c.
+
+
+
+Referenced by H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback(), and H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Callback().
+
+\mbox{\Hypertarget{main_8c_afc6fd792d6db891a3d7d53f0475d136c}\label{main_8c_afc6fd792d6db891a3d7d53f0475d136c}} 
+\index{main.c@{main.c}!modem\_buffer\_rx@{modem\_buffer\_rx}}
+\index{modem\_buffer\_rx@{modem\_buffer\_rx}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{modem\_buffer\_rx}{modem\_buffer\_rx}}
+{\footnotesize\ttfamily uint8\+\_\+t modem\+\_\+buffer\+\_\+rx\mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+S\+\_\+\+S\+I\+ZE\mbox{]} = \{0\}}
+
+
+
+Definition at line 112 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a4a66dd6a00315cb287f0ec0edbcb9bf9}\label{main_8c_a4a66dd6a00315cb287f0ec0edbcb9bf9}} 
+\index{main.c@{main.c}!modem\_packet@{modem\_packet}}
+\index{modem\_packet@{modem\_packet}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{modem\_packet}{modem\_packet}}
+{\footnotesize\ttfamily bus\+\_\+packet\+\_\+t modem\+\_\+packet = \{0\}}
+
+
+
+Definition at line 113 of file main.\+c.
+

@@ -1,0 +1,229 @@
+\hypertarget{bus__packet_8c}{}\doxysection{bus\+\_\+packet.\+c File Reference}
+\label{bus__packet_8c}\index{bus\_packet.c@{bus\_packet.c}}
+
+
+\+: Encoder and decoder for bus packet Fy\+C\+US 2023  
+
+
+{\ttfamily \#include \char`\"{}bus\+\_\+packet.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{bus__packet_8c_a76799d3fecf73bb78b4ec952d263bf0c}{bus\+\_\+packet\+\_\+\+Decode}} (uint8\+\_\+t $\ast$buffer, bus\+\_\+packet\+\_\+t $\ast$packet)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{bus__packet_8c_a5ffbc965a3f60485eaea87b6eb58600d}{bus\+\_\+packet\+\_\+\+Encode}} (uint8\+\_\+t type, uint8\+\_\+t apid, uint8\+\_\+t ecf\+\_\+flag, uint8\+\_\+t $\ast$data, uint32\+\_\+t data\+\_\+length, bus\+\_\+packet\+\_\+t $\ast$packet)
+\item 
+void \mbox{\hyperlink{bus__packet_8c_a99ff955e245f3098b96ae89b980b64d7}{bus\+\_\+packet\+\_\+\+Packetize}} (uint8\+\_\+t $\ast$buffer, bus\+\_\+packet\+\_\+t $\ast$packet)
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{bus__packet_8c_ad858c3198259a0663079a864b32446e6}{bus\+\_\+packet\+\_\+\+Encode\+Packetize}} (uint8\+\_\+t type, uint8\+\_\+t apid, uint8\+\_\+t ecf\+\_\+flag, uint8\+\_\+t $\ast$data, uint32\+\_\+t data\+\_\+length, uint8\+\_\+t $\ast$buffer\+\_\+out)
+\item 
+bus\+\_\+sync\+\_\+flag\+\_\+t \mbox{\hyperlink{bus__packet_8c_a43f0aed79673206538b992585877a416}{bus\+\_\+packet\+\_\+\+Sync\+Frame\+Detect}} (bus\+\_\+sync\+\_\+flag\+\_\+t flag, uint8\+\_\+t received\+\_\+data)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{bus__packet_8c_a0b8aeccd5cac3e3a6bc510a9fafa7907}{bus\+\_\+packet\+\_\+\+C\+R\+C16\+C\+C\+S\+D\+S\+Calculate}} (int16\+\_\+t seed, uint8\+\_\+t $\ast$buf, uint32\+\_\+t len)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{bus__packet_8c_ab53274e1cf190ad52086c293366eb743}{B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+NC}} \mbox{[}4\mbox{]} = \{0x1A, 0x\+CF, 0x\+FC, 0x1D\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Encoder and decoder for bus packet Fy\+C\+US 2023 
+
+\begin{DoxyAuthor}{Author}
+Rubén Torres Bermúdez \href{mailto:rubentorresbermudez@gmail.com}{\texttt{ rubentorresbermudez@gmail.\+com}}
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Created on\+: 11.\+08.\+2023
+
+Description\+: This library is used to encode, packetize, decode and sync data to communicate different systems connected to the internal bus of Fy\+C\+US 2023 prototype.
+
+Example\+: bus\+\_\+packet\+\_\+t packet = \{0\}; uint8\+\_\+t data\mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE\mbox{]} = \{100,1,12,234,34,3\}; buffer\+\_\+in\mbox{[}B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+B\+U\+S\+\_\+\+S\+I\+ZE\mbox{]} = \{0\}; bus\+\_\+packet\+\_\+\+Encode\+Packetize(1, 90, 1, data, 6, buffer\+\_\+in); if (bus\+\_\+packet\+\_\+\+Decode(buffer\+\_\+in, \&packet) != H\+A\+L\+\_\+\+OK) Error\+\_\+\+Handle(); // Approximated time for max buffer\+: 8330 clock cycles
+
+Warning\+: With S\+T\+M32, define your own C\+RC handle and make sure that is correctly configured\+: bus\+\_\+packet\+\_\+\+C\+R\+C16\+C\+C\+S\+D\+S\+Config();
+
+
+\begin{DoxyItemize}
+\item Poly 16 bits\+: X$^\wedge$16 + X$^\wedge$12 + X$^\wedge$5 + 1
+\item 8 bits input
+\item Input and output without bit inversion
+\end{DoxyItemize}
+
+Copyright (C) 2023 Rubén Torres Bermúdez 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bus__packet_8c_a0b8aeccd5cac3e3a6bc510a9fafa7907}\label{bus__packet_8c_a0b8aeccd5cac3e3a6bc510a9fafa7907}} 
+\index{bus\_packet.c@{bus\_packet.c}!bus\_packet\_CRC16CCSDSCalculate@{bus\_packet\_CRC16CCSDSCalculate}}
+\index{bus\_packet\_CRC16CCSDSCalculate@{bus\_packet\_CRC16CCSDSCalculate}!bus\_packet.c@{bus\_packet.c}}
+\doxysubsubsection{\texorpdfstring{bus\_packet\_CRC16CCSDSCalculate()}{bus\_packet\_CRC16CCSDSCalculate()}}
+{\footnotesize\ttfamily uint16\+\_\+t bus\+\_\+packet\+\_\+\+C\+R\+C16\+C\+C\+S\+D\+S\+Calculate (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{seed,  }\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{uint32\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Definition at line 334 of file bus\+\_\+packet.\+c.
+
+
+
+Referenced by bus\+\_\+packet\+\_\+\+Decode(), bus\+\_\+packet\+\_\+\+Encode(), bus\+\_\+packet\+\_\+\+Encode\+Packetize(), tf\+\_\+packet\+\_\+\+Decode(), and tf\+\_\+packet\+\_\+\+Packetize().
+
+\mbox{\Hypertarget{bus__packet_8c_a76799d3fecf73bb78b4ec952d263bf0c}\label{bus__packet_8c_a76799d3fecf73bb78b4ec952d263bf0c}} 
+\index{bus\_packet.c@{bus\_packet.c}!bus\_packet\_Decode@{bus\_packet\_Decode}}
+\index{bus\_packet\_Decode@{bus\_packet\_Decode}!bus\_packet.c@{bus\_packet.c}}
+\doxysubsubsection{\texorpdfstring{bus\_packet\_Decode()}{bus\_packet\_Decode()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def bus\+\_\+packet\+\_\+\+Decode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{bus\+\_\+packet\+\_\+t $\ast$}]{packet }\end{DoxyParamCaption})}
+
+Decode data buffer that contain a bus packet 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Data buffer with a bus packet to decode \\
+\hline
+{\em packet} & Pointer to bus packet structure to save data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file bus\+\_\+packet.\+c.
+
+
+
+References bus\+\_\+packet\+\_\+\+C\+R\+C16\+C\+C\+S\+D\+S\+Calculate(), and hcrc.
+
+\mbox{\Hypertarget{bus__packet_8c_a5ffbc965a3f60485eaea87b6eb58600d}\label{bus__packet_8c_a5ffbc965a3f60485eaea87b6eb58600d}} 
+\index{bus\_packet.c@{bus\_packet.c}!bus\_packet\_Encode@{bus\_packet\_Encode}}
+\index{bus\_packet\_Encode@{bus\_packet\_Encode}!bus\_packet.c@{bus\_packet.c}}
+\doxysubsubsection{\texorpdfstring{bus\_packet\_Encode()}{bus\_packet\_Encode()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def bus\+\_\+packet\+\_\+\+Encode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{type,  }\item[{uint8\+\_\+t}]{apid,  }\item[{uint8\+\_\+t}]{ecf\+\_\+flag,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint32\+\_\+t}]{data\+\_\+length,  }\item[{bus\+\_\+packet\+\_\+t $\ast$}]{packet }\end{DoxyParamCaption})}
+
+Encode data into a bus packet structure 
+\begin{DoxyParams}{Parameters}
+{\em type} & \begin{DoxyItemize}
+\item B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+TM if a TM data is contained \item B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+TC if a TM data is contained \end{DoxyItemize}
+\\
+\hline
+{\em apid} & A\+P\+ID number for contained data \\
+\hline
+{\em ecf\+\_\+flag} & \begin{DoxyItemize}
+\item B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+E\+C\+F\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST if an Error Control Field will be not encoded \item B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+E\+C\+F\+\_\+\+E\+X\+I\+ST if an Error Control Field will be encoded \end{DoxyItemize}
+\\
+\hline
+{\em data} & Pointer to data that will be encoded \\
+\hline
+{\em data\+\_\+length} & Data length \\
+\hline
+{\em packet} & Pointer to bus packet structure to save data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file bus\+\_\+packet.\+c.
+
+
+
+References bus\+\_\+packet\+\_\+\+C\+R\+C16\+C\+C\+S\+D\+S\+Calculate(), and hcrc.
+
+\mbox{\Hypertarget{bus__packet_8c_ad858c3198259a0663079a864b32446e6}\label{bus__packet_8c_ad858c3198259a0663079a864b32446e6}} 
+\index{bus\_packet.c@{bus\_packet.c}!bus\_packet\_EncodePacketize@{bus\_packet\_EncodePacketize}}
+\index{bus\_packet\_EncodePacketize@{bus\_packet\_EncodePacketize}!bus\_packet.c@{bus\_packet.c}}
+\doxysubsubsection{\texorpdfstring{bus\_packet\_EncodePacketize()}{bus\_packet\_EncodePacketize()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def bus\+\_\+packet\+\_\+\+Encode\+Packetize (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{type,  }\item[{uint8\+\_\+t}]{apid,  }\item[{uint8\+\_\+t}]{ecf\+\_\+flag,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint32\+\_\+t}]{data\+\_\+length,  }\item[{uint8\+\_\+t $\ast$}]{buffer\+\_\+out }\end{DoxyParamCaption})}
+
+Encode and packetize data into a buffer for to be transmitted 
+\begin{DoxyParams}{Parameters}
+{\em type} & \begin{DoxyItemize}
+\item B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+TM if a TM data is contained \item B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+TC if a TM data is contained \end{DoxyItemize}
+\\
+\hline
+{\em apid} & A\+P\+ID number for contained data \\
+\hline
+{\em ecf\+\_\+flag} & \begin{DoxyItemize}
+\item B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+E\+C\+F\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST if an Error Control Field will be not encoded \item B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+E\+C\+F\+\_\+\+E\+X\+I\+ST if an Error Control Field will be encoded \end{DoxyItemize}
+\\
+\hline
+{\em data} & Pointer to data that will be encoded \\
+\hline
+{\em data\+\_\+length} & Data length \\
+\hline
+{\em buffer\+\_\+out} & Pointer to a data buffer for to be transmitted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+AL status 
+\end{DoxyReturn}
+
+
+Definition at line 178 of file bus\+\_\+packet.\+c.
+
+
+
+References bus\+\_\+packet\+\_\+\+C\+R\+C16\+C\+C\+S\+D\+S\+Calculate(), and hcrc.
+
+
+
+Referenced by intelli\+O\+B\+C\+\_\+\+T\+C(), send\+\_\+ack(), send\+\_\+data\+\_\+saving(), send\+\_\+nack(), and send\+\_\+programmed\+\_\+\+T\+M().
+
+\mbox{\Hypertarget{bus__packet_8c_a99ff955e245f3098b96ae89b980b64d7}\label{bus__packet_8c_a99ff955e245f3098b96ae89b980b64d7}} 
+\index{bus\_packet.c@{bus\_packet.c}!bus\_packet\_Packetize@{bus\_packet\_Packetize}}
+\index{bus\_packet\_Packetize@{bus\_packet\_Packetize}!bus\_packet.c@{bus\_packet.c}}
+\doxysubsubsection{\texorpdfstring{bus\_packet\_Packetize()}{bus\_packet\_Packetize()}}
+{\footnotesize\ttfamily void bus\+\_\+packet\+\_\+\+Packetize (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{bus\+\_\+packet\+\_\+t $\ast$}]{packet }\end{DoxyParamCaption})}
+
+Packetize an encoded space packet to be transmitted 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Pointer to a data buffer for to be transmitted \\
+\hline
+{\em packet} & Pointer to a space packet to be packetized \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 144 of file bus\+\_\+packet.\+c.
+
+\mbox{\Hypertarget{bus__packet_8c_a43f0aed79673206538b992585877a416}\label{bus__packet_8c_a43f0aed79673206538b992585877a416}} 
+\index{bus\_packet.c@{bus\_packet.c}!bus\_packet\_SyncFrameDetect@{bus\_packet\_SyncFrameDetect}}
+\index{bus\_packet\_SyncFrameDetect@{bus\_packet\_SyncFrameDetect}!bus\_packet.c@{bus\_packet.c}}
+\doxysubsubsection{\texorpdfstring{bus\_packet\_SyncFrameDetect()}{bus\_packet\_SyncFrameDetect()}}
+{\footnotesize\ttfamily bus\+\_\+sync\+\_\+flag\+\_\+t bus\+\_\+packet\+\_\+\+Sync\+Frame\+Detect (\begin{DoxyParamCaption}\item[{bus\+\_\+sync\+\_\+flag\+\_\+t}]{flag,  }\item[{uint8\+\_\+t}]{received\+\_\+data }\end{DoxyParamCaption})}
+
+Detect next flag sync based on the input flag and input data 
+\begin{DoxyParams}{Parameters}
+{\em flag} & Last flag of your Sync frame \\
+\hline
+{\em received\+\_\+data} & Current data received \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current flag of your Sync frame 
+\end{DoxyReturn}
+
+
+Definition at line 211 of file bus\+\_\+packet.\+c.
+
+
+
+References B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+NC.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{bus__packet_8c_ab53274e1cf190ad52086c293366eb743}\label{bus__packet_8c_ab53274e1cf190ad52086c293366eb743}} 
+\index{bus\_packet.c@{bus\_packet.c}!BUS\_PACKET\_FRAME\_SYNC@{BUS\_PACKET\_FRAME\_SYNC}}
+\index{BUS\_PACKET\_FRAME\_SYNC@{BUS\_PACKET\_FRAME\_SYNC}!bus\_packet.c@{bus\_packet.c}}
+\doxysubsubsection{\texorpdfstring{BUS\_PACKET\_FRAME\_SYNC}{BUS\_PACKET\_FRAME\_SYNC}}
+{\footnotesize\ttfamily const uint8\+\_\+t B\+U\+S\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+Y\+NC\mbox{[}4\mbox{]} = \{0x1A, 0x\+CF, 0x\+FC, 0x1D\}}
+
+
+
+Definition at line 45 of file bus\+\_\+packet.\+c.
+
+
+
+Referenced by bus\+\_\+packet\+\_\+\+Sync\+Frame\+Detect(), send\+\_\+ack(), send\+\_\+nack(), and send\+\_\+\+T\+M().
+
